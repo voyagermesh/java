@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Time;
+import com.appscode.voyager.client.models.V1Time;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +30,7 @@ import java.io.IOException;
 
 public class V1beta1CertificateCondition {
   @SerializedName("lastUpdateTime")
-  private IoK8sApimachineryPkgApisMetaV1Time lastUpdateTime = null;
+  private V1Time lastUpdateTime = null;
 
   @SerializedName("message")
   private String message = null;
@@ -41,7 +41,7 @@ public class V1beta1CertificateCondition {
   @SerializedName("type")
   private String type = null;
 
-  public V1beta1CertificateCondition lastUpdateTime(IoK8sApimachineryPkgApisMetaV1Time lastUpdateTime) {
+  public V1beta1CertificateCondition lastUpdateTime(V1Time lastUpdateTime) {
     this.lastUpdateTime = lastUpdateTime;
     return this;
   }
@@ -51,11 +51,11 @@ public class V1beta1CertificateCondition {
    * @return lastUpdateTime
   **/
   @ApiModelProperty(value = "timestamp for the last update to this condition")
-  public IoK8sApimachineryPkgApisMetaV1Time getLastUpdateTime() {
+  public V1Time getLastUpdateTime() {
     return lastUpdateTime;
   }
 
-  public void setLastUpdateTime(IoK8sApimachineryPkgApisMetaV1Time lastUpdateTime) {
+  public void setLastUpdateTime(V1Time lastUpdateTime) {
     this.lastUpdateTime = lastUpdateTime;
   }
 

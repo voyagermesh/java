@@ -14,10 +14,6 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1Affinity;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1LocalObjectReference;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1ResourceRequirements;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1Toleration;
 import com.appscode.voyager.client.models.V1beta1FrontendRule;
 import com.appscode.voyager.client.models.V1beta1HTTPIngressBackend;
 import com.appscode.voyager.client.models.V1beta1IngressRule;
@@ -27,6 +23,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1Affinity;
+import io.kubernetes.client.models.V1LocalObjectReference;
+import io.kubernetes.client.models.V1ResourceRequirements;
+import io.kubernetes.client.models.V1Toleration;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -42,7 +42,7 @@ import java.util.Map;
 
 public class V1beta1IngressSpec {
   @SerializedName("affinity")
-  private IoK8sApiCoreV1Affinity affinity = null;
+  private V1Affinity affinity = null;
 
   @SerializedName("backend")
   private V1beta1HTTPIngressBackend backend = null;
@@ -54,7 +54,7 @@ public class V1beta1IngressSpec {
   private List<V1beta1FrontendRule> frontendRules = null;
 
   @SerializedName("imagePullSecrets")
-  private List<IoK8sApiCoreV1LocalObjectReference> imagePullSecrets = null;
+  private List<V1LocalObjectReference> imagePullSecrets = null;
 
   @SerializedName("loadBalancerSourceRanges")
   private List<String> loadBalancerSourceRanges = null;
@@ -63,7 +63,7 @@ public class V1beta1IngressSpec {
   private Map<String, String> nodeSelector = null;
 
   @SerializedName("resources")
-  private IoK8sApiCoreV1ResourceRequirements resources = null;
+  private V1ResourceRequirements resources = null;
 
   @SerializedName("rules")
   private List<V1beta1IngressRule> rules = null;
@@ -75,9 +75,9 @@ public class V1beta1IngressSpec {
   private List<V1beta1IngressTLS> tls = null;
 
   @SerializedName("tolerations")
-  private List<IoK8sApiCoreV1Toleration> tolerations = null;
+  private List<V1Toleration> tolerations = null;
 
-  public V1beta1IngressSpec affinity(IoK8sApiCoreV1Affinity affinity) {
+  public V1beta1IngressSpec affinity(V1Affinity affinity) {
     this.affinity = affinity;
     return this;
   }
@@ -87,11 +87,11 @@ public class V1beta1IngressSpec {
    * @return affinity
   **/
   @ApiModelProperty(value = "If specified, the pod's scheduling constraints")
-  public IoK8sApiCoreV1Affinity getAffinity() {
+  public V1Affinity getAffinity() {
     return affinity;
   }
 
-  public void setAffinity(IoK8sApiCoreV1Affinity affinity) {
+  public void setAffinity(V1Affinity affinity) {
     this.affinity = affinity;
   }
 
@@ -165,14 +165,14 @@ public class V1beta1IngressSpec {
     this.frontendRules = frontendRules;
   }
 
-  public V1beta1IngressSpec imagePullSecrets(List<IoK8sApiCoreV1LocalObjectReference> imagePullSecrets) {
+  public V1beta1IngressSpec imagePullSecrets(List<V1LocalObjectReference> imagePullSecrets) {
     this.imagePullSecrets = imagePullSecrets;
     return this;
   }
 
-  public V1beta1IngressSpec addImagePullSecretsItem(IoK8sApiCoreV1LocalObjectReference imagePullSecretsItem) {
+  public V1beta1IngressSpec addImagePullSecretsItem(V1LocalObjectReference imagePullSecretsItem) {
     if (this.imagePullSecrets == null) {
-      this.imagePullSecrets = new ArrayList<IoK8sApiCoreV1LocalObjectReference>();
+      this.imagePullSecrets = new ArrayList<V1LocalObjectReference>();
     }
     this.imagePullSecrets.add(imagePullSecretsItem);
     return this;
@@ -183,11 +183,11 @@ public class V1beta1IngressSpec {
    * @return imagePullSecrets
   **/
   @ApiModelProperty(value = "ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod")
-  public List<IoK8sApiCoreV1LocalObjectReference> getImagePullSecrets() {
+  public List<V1LocalObjectReference> getImagePullSecrets() {
     return imagePullSecrets;
   }
 
-  public void setImagePullSecrets(List<IoK8sApiCoreV1LocalObjectReference> imagePullSecrets) {
+  public void setImagePullSecrets(List<V1LocalObjectReference> imagePullSecrets) {
     this.imagePullSecrets = imagePullSecrets;
   }
 
@@ -243,7 +243,7 @@ public class V1beta1IngressSpec {
     this.nodeSelector = nodeSelector;
   }
 
-  public V1beta1IngressSpec resources(IoK8sApiCoreV1ResourceRequirements resources) {
+  public V1beta1IngressSpec resources(V1ResourceRequirements resources) {
     this.resources = resources;
     return this;
   }
@@ -253,11 +253,11 @@ public class V1beta1IngressSpec {
    * @return resources
   **/
   @ApiModelProperty(value = "Compute Resources required by the sidecar container.")
-  public IoK8sApiCoreV1ResourceRequirements getResources() {
+  public V1ResourceRequirements getResources() {
     return resources;
   }
 
-  public void setResources(IoK8sApiCoreV1ResourceRequirements resources) {
+  public void setResources(V1ResourceRequirements resources) {
     this.resources = resources;
   }
 
@@ -331,14 +331,14 @@ public class V1beta1IngressSpec {
     this.tls = tls;
   }
 
-  public V1beta1IngressSpec tolerations(List<IoK8sApiCoreV1Toleration> tolerations) {
+  public V1beta1IngressSpec tolerations(List<V1Toleration> tolerations) {
     this.tolerations = tolerations;
     return this;
   }
 
-  public V1beta1IngressSpec addTolerationsItem(IoK8sApiCoreV1Toleration tolerationsItem) {
+  public V1beta1IngressSpec addTolerationsItem(V1Toleration tolerationsItem) {
     if (this.tolerations == null) {
-      this.tolerations = new ArrayList<IoK8sApiCoreV1Toleration>();
+      this.tolerations = new ArrayList<V1Toleration>();
     }
     this.tolerations.add(tolerationsItem);
     return this;
@@ -349,11 +349,11 @@ public class V1beta1IngressSpec {
    * @return tolerations
   **/
   @ApiModelProperty(value = "If specified, the pod's tolerations.")
-  public List<IoK8sApiCoreV1Toleration> getTolerations() {
+  public List<V1Toleration> getTolerations() {
     return tolerations;
   }
 
-  public void setTolerations(List<IoK8sApiCoreV1Toleration> tolerations) {
+  public void setTolerations(List<V1Toleration> tolerations) {
     this.tolerations = tolerations;
   }
 

@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Time;
+import com.appscode.voyager.client.models.V1Time;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,10 +39,10 @@ public class V1beta1CertificateDetails {
   private String certURL = null;
 
   @SerializedName("notAfter")
-  private IoK8sApimachineryPkgApisMetaV1Time notAfter = null;
+  private V1Time notAfter = null;
 
   @SerializedName("notBefore")
-  private IoK8sApimachineryPkgApisMetaV1Time notBefore = null;
+  private V1Time notBefore = null;
 
   @SerializedName("serialNumber")
   private String serialNumber = null;
@@ -101,7 +101,7 @@ public class V1beta1CertificateDetails {
     this.certURL = certURL;
   }
 
-  public V1beta1CertificateDetails notAfter(IoK8sApimachineryPkgApisMetaV1Time notAfter) {
+  public V1beta1CertificateDetails notAfter(V1Time notAfter) {
     this.notAfter = notAfter;
     return this;
   }
@@ -111,15 +111,15 @@ public class V1beta1CertificateDetails {
    * @return notAfter
   **/
   @ApiModelProperty(value = "")
-  public IoK8sApimachineryPkgApisMetaV1Time getNotAfter() {
+  public V1Time getNotAfter() {
     return notAfter;
   }
 
-  public void setNotAfter(IoK8sApimachineryPkgApisMetaV1Time notAfter) {
+  public void setNotAfter(V1Time notAfter) {
     this.notAfter = notAfter;
   }
 
-  public V1beta1CertificateDetails notBefore(IoK8sApimachineryPkgApisMetaV1Time notBefore) {
+  public V1beta1CertificateDetails notBefore(V1Time notBefore) {
     this.notBefore = notBefore;
     return this;
   }
@@ -129,11 +129,11 @@ public class V1beta1CertificateDetails {
    * @return notBefore
   **/
   @ApiModelProperty(value = "")
-  public IoK8sApimachineryPkgApisMetaV1Time getNotBefore() {
+  public V1Time getNotBefore() {
     return notBefore;
   }
 
-  public void setNotBefore(IoK8sApimachineryPkgApisMetaV1Time notBefore) {
+  public void setNotBefore(V1Time notBefore) {
     this.notBefore = notBefore;
   }
 

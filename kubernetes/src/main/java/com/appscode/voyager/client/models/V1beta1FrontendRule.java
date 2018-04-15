@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgUtilIntstrIntOrString;
 import com.appscode.voyager.client.models.V1beta1AuthOption;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.custom.IntOrString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class V1beta1FrontendRule {
   private V1beta1AuthOption auth = null;
 
   @SerializedName("port")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString port = null;
+  private IntOrString port = null;
 
   @SerializedName("rules")
   private List<String> rules = null;
@@ -59,7 +59,7 @@ public class V1beta1FrontendRule {
     this.auth = auth;
   }
 
-  public V1beta1FrontendRule port(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public V1beta1FrontendRule port(IntOrString port) {
     this.port = port;
     return this;
   }
@@ -69,11 +69,11 @@ public class V1beta1FrontendRule {
    * @return port
   **/
   @ApiModelProperty(value = "Port indicates the frontend port where HAProxy is listening for connection")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getPort() {
+  public IntOrString getPort() {
     return port;
   }
 
-  public void setPort(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public void setPort(IntOrString port) {
     this.port = port;
   }
 

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIGroup;
+import io.kubernetes.client.models.V1APIGroup;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -118,23 +118,23 @@ public class VoyagerAppscodeComApi {
     /**
      * 
      * get information of a group
-     * @return IoK8sApimachineryPkgApisMetaV1APIGroup
+     * @return V1APIGroup
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public IoK8sApimachineryPkgApisMetaV1APIGroup getAPIGroup() throws ApiException {
-        ApiResponse<IoK8sApimachineryPkgApisMetaV1APIGroup> resp = getAPIGroupWithHttpInfo();
+    public V1APIGroup getAPIGroup() throws ApiException {
+        ApiResponse<V1APIGroup> resp = getAPIGroupWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * get information of a group
-     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1APIGroup&gt;
+     * @return ApiResponse&lt;V1APIGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<IoK8sApimachineryPkgApisMetaV1APIGroup> getAPIGroupWithHttpInfo() throws ApiException {
+    public ApiResponse<V1APIGroup> getAPIGroupWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getAPIGroupValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIGroup>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1APIGroup>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -145,7 +145,7 @@ public class VoyagerAppscodeComApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAPIGroupAsync(final ApiCallback<IoK8sApimachineryPkgApisMetaV1APIGroup> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAPIGroupAsync(final ApiCallback<V1APIGroup> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -167,7 +167,7 @@ public class VoyagerAppscodeComApi {
         }
 
         com.squareup.okhttp.Call call = getAPIGroupValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIGroup>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1APIGroup>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIGroupList;
+import io.kubernetes.client.models.V1APIGroupList;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -118,23 +118,23 @@ public class ApisApi {
     /**
      * 
      * get available API versions
-     * @return IoK8sApimachineryPkgApisMetaV1APIGroupList
+     * @return V1APIGroupList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public IoK8sApimachineryPkgApisMetaV1APIGroupList getAPIVersions() throws ApiException {
-        ApiResponse<IoK8sApimachineryPkgApisMetaV1APIGroupList> resp = getAPIVersionsWithHttpInfo();
+    public V1APIGroupList getAPIVersions() throws ApiException {
+        ApiResponse<V1APIGroupList> resp = getAPIVersionsWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * get available API versions
-     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1APIGroupList&gt;
+     * @return ApiResponse&lt;V1APIGroupList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<IoK8sApimachineryPkgApisMetaV1APIGroupList> getAPIVersionsWithHttpInfo() throws ApiException {
+    public ApiResponse<V1APIGroupList> getAPIVersionsWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getAPIVersionsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIGroupList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1APIGroupList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -145,7 +145,7 @@ public class ApisApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAPIVersionsAsync(final ApiCallback<IoK8sApimachineryPkgApisMetaV1APIGroupList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAPIVersionsAsync(final ApiCallback<V1APIGroupList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -167,7 +167,7 @@ public class ApisApi {
         }
 
         com.squareup.okhttp.Call call = getAPIVersionsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIGroupList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1APIGroupList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

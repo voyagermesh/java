@@ -38,7 +38,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroupList"
+              "$ref": "#/definitions/v1.APIGroupList"
             }
           }
         }
@@ -68,7 +68,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIGroup"
+              "$ref": "#/definitions/v1.APIGroup"
             }
           }
         }
@@ -98,7 +98,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.APIResourceList"
+              "$ref": "#/definitions/v1.APIResourceList"
             }
           }
         }
@@ -532,7 +532,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+              "$ref": "#/definitions/v1.Status"
             }
           }
         },
@@ -665,7 +665,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions"
+              "$ref": "#/definitions/v1.DeleteOptions"
             }
           },
           {
@@ -694,7 +694,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+              "$ref": "#/definitions/v1.Status"
             }
           }
         },
@@ -730,7 +730,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
+              "$ref": "#/definitions/v1.Patch"
             }
           }
         ],
@@ -1001,7 +1001,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+              "$ref": "#/definitions/v1.Status"
             }
           }
         },
@@ -1134,7 +1134,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions"
+              "$ref": "#/definitions/v1.DeleteOptions"
             }
           },
           {
@@ -1163,7 +1163,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Status"
+              "$ref": "#/definitions/v1.Status"
             }
           }
         },
@@ -1199,7 +1199,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Patch"
+              "$ref": "#/definitions/v1.Patch"
             }
           }
         ],
@@ -1729,11 +1729,11 @@
         },
         "nodePort": {
           "description": "Specifies the node port of the referenced service.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         },
         "port": {
           "description": "port to listen tcp connections.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -1796,7 +1796,7 @@
         },
         "servicePort": {
           "description": "Specifies the port of the referenced service.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -1805,7 +1805,7 @@
       "properties": {
         "affinity": {
           "description": "If specified, the pod's scheduling constraints",
-          "$ref": "#/definitions/io.k8s.api.core.v1.Affinity"
+          "$ref": "#/definitions/v1.Affinity"
         },
         "backend": {
           "description": "A default backend capable of servicing requests that don't match any rule. At least one of 'backend' or 'rules' must be specified. This field is optional to allow the loadbalancer controller or defaulting logic to specify a global default.",
@@ -1829,7 +1829,7 @@
           "description": "ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/io.k8s.api.core.v1.LocalObjectReference"
+            "$ref": "#/definitions/v1.LocalObjectReference"
           }
         },
         "loadBalancerSourceRanges": {
@@ -1848,7 +1848,7 @@
         },
         "resources": {
           "description": "Compute Resources required by the sidecar container.",
-          "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements"
+          "$ref": "#/definitions/v1.ResourceRequirements"
         },
         "rules": {
           "description": "A list of host rules used to configure the Ingress. If unspecified, or no rule matches, all traffic is sent to the default backend.",
@@ -1872,7 +1872,7 @@
           "description": "If specified, the pod's tolerations.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/io.k8s.api.core.v1.Toleration"
+            "$ref": "#/definitions/v1.Toleration"
           }
         }
       }
@@ -1900,10 +1900,10 @@
           "type": "string"
         },
         "notAfter": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+          "$ref": "#/definitions/v1.Time"
         },
         "notBefore": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+          "$ref": "#/definitions/v1.Time"
         },
         "serialNumber": {
           "type": "string"
@@ -1926,7 +1926,7 @@
         },
         "nodePort": {
           "description": "Specifies the node port of the referenced service.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         },
         "paths": {
           "description": "A collection of paths that map requests to backends.",
@@ -1937,7 +1937,7 @@
         },
         "port": {
           "description": "port to listen http(s) connections.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -1995,7 +1995,7 @@
       "properties": {
         "lastUpdateTime": {
           "description": "timestamp for the last update to this condition",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+          "$ref": "#/definitions/v1.Time"
         },
         "message": {
           "description": "human readable message with details about the request state",
@@ -2072,7 +2072,7 @@
         },
         "servicePort": {
           "description": "Specifies the port of the referenced service.",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -2089,7 +2089,7 @@
         },
         "metadata": {
           "description": "Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+          "$ref": "#/definitions/v1.ObjectMeta"
         },
         "spec": {
           "description": "Spec is the desired state of the Ingress. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#spec-and-status",
@@ -2125,7 +2125,7 @@
           }
         },
         "creationTime": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+          "$ref": "#/definitions/v1.Time"
         },
         "details": {
           "description": "Deprecated",
@@ -2155,7 +2155,7 @@
       "properties": {
         "loadBalancer": {
           "description": "LoadBalancer contains the current status of the load-balancer.",
-          "$ref": "#/definitions/io.k8s.api.core.v1.LoadBalancerStatus"
+          "$ref": "#/definitions/v1.LoadBalancerStatus"
         }
       }
     },
@@ -2172,7 +2172,7 @@
     "v1beta1.CertificateStorage": {
       "properties": {
         "secret": {
-          "$ref": "#/definitions/io.k8s.api.core.v1.LocalObjectReference"
+          "$ref": "#/definitions/v1.LocalObjectReference"
         },
         "vault": {
           "$ref": "#/definitions/v1beta1.VaultStore"
@@ -2206,7 +2206,7 @@
           "type": "string"
         },
         "metadata": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+          "$ref": "#/definitions/v1.ListMeta"
         }
       },
       "x-kubernetes-group-version-kind": [
@@ -2248,7 +2248,7 @@
           "type": "string"
         },
         "metadata": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+          "$ref": "#/definitions/v1.ObjectMeta"
         },
         "spec": {
           "$ref": "#/definitions/v1beta1.CertificateSpec"
@@ -2285,7 +2285,7 @@
         },
         "port": {
           "description": "Port indicates the frontend port where HAProxy is listening for connection",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "$ref": "#/definitions/intstr.IntOrString"
         },
         "rules": {
           "description": "Serialized rules",
@@ -2330,7 +2330,7 @@
         },
         "metadata": {
           "description": "Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+          "$ref": "#/definitions/v1.ListMeta"
         }
       },
       "x-kubernetes-group-version-kind": [

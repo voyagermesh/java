@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Time;
+import com.appscode.voyager.client.models.V1Time;
 import com.appscode.voyager.client.models.V1beta1ACMECertificateDetails;
 import com.appscode.voyager.client.models.V1beta1CertificateCondition;
 import com.appscode.voyager.client.models.V1beta1CertificateDetails;
@@ -44,7 +44,7 @@ public class V1beta1CertificateStatus {
   private List<V1beta1CertificateCondition> conditions = null;
 
   @SerializedName("creationTime")
-  private IoK8sApimachineryPkgApisMetaV1Time creationTime = null;
+  private V1Time creationTime = null;
 
   @SerializedName("details")
   private V1beta1ACMECertificateDetails details = null;
@@ -117,7 +117,7 @@ public class V1beta1CertificateStatus {
     this.conditions = conditions;
   }
 
-  public V1beta1CertificateStatus creationTime(IoK8sApimachineryPkgApisMetaV1Time creationTime) {
+  public V1beta1CertificateStatus creationTime(V1Time creationTime) {
     this.creationTime = creationTime;
     return this;
   }
@@ -127,11 +127,11 @@ public class V1beta1CertificateStatus {
    * @return creationTime
   **/
   @ApiModelProperty(value = "")
-  public IoK8sApimachineryPkgApisMetaV1Time getCreationTime() {
+  public V1Time getCreationTime() {
     return creationTime;
   }
 
-  public void setCreationTime(IoK8sApimachineryPkgApisMetaV1Time creationTime) {
+  public void setCreationTime(V1Time creationTime) {
     this.creationTime = creationTime;
   }
 

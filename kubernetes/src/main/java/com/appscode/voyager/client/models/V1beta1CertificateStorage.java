@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1LocalObjectReference;
 import com.appscode.voyager.client.models.V1beta1VaultStore;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1LocalObjectReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 public class V1beta1CertificateStorage {
   @SerializedName("secret")
-  private IoK8sApiCoreV1LocalObjectReference secret = null;
+  private V1LocalObjectReference secret = null;
 
   @SerializedName("vault")
   private V1beta1VaultStore vault = null;
 
-  public V1beta1CertificateStorage secret(IoK8sApiCoreV1LocalObjectReference secret) {
+  public V1beta1CertificateStorage secret(V1LocalObjectReference secret) {
     this.secret = secret;
     return this;
   }
@@ -46,11 +46,11 @@ public class V1beta1CertificateStorage {
    * @return secret
   **/
   @ApiModelProperty(value = "")
-  public IoK8sApiCoreV1LocalObjectReference getSecret() {
+  public V1LocalObjectReference getSecret() {
     return secret;
   }
 
-  public void setSecret(IoK8sApiCoreV1LocalObjectReference secret) {
+  public void setSecret(V1LocalObjectReference secret) {
     this.secret = secret;
   }
 

@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1ListMeta;
 import com.appscode.voyager.client.models.V1beta1Ingress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1ListMeta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class V1beta1IngressList {
   private String kind = null;
 
   @SerializedName("metadata")
-  private IoK8sApimachineryPkgApisMetaV1ListMeta metadata = null;
+  private V1ListMeta metadata = null;
 
   public V1beta1IngressList apiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
@@ -104,7 +104,7 @@ public class V1beta1IngressList {
     this.kind = kind;
   }
 
-  public V1beta1IngressList metadata(IoK8sApimachineryPkgApisMetaV1ListMeta metadata) {
+  public V1beta1IngressList metadata(V1ListMeta metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -114,11 +114,11 @@ public class V1beta1IngressList {
    * @return metadata
   **/
   @ApiModelProperty(value = "Standard object's metadata. More info: http://releases.k8s.io/release-1.2/docs/devel/api-conventions.md#metadata")
-  public IoK8sApimachineryPkgApisMetaV1ListMeta getMetadata() {
+  public V1ListMeta getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(IoK8sApimachineryPkgApisMetaV1ListMeta metadata) {
+  public void setMetadata(V1ListMeta metadata) {
     this.metadata = metadata;
   }
 

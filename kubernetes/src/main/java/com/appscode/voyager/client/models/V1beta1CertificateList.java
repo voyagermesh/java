@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1ListMeta;
 import com.appscode.voyager.client.models.V1beta1Certificate;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1ListMeta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class V1beta1CertificateList {
   private String kind = null;
 
   @SerializedName("metadata")
-  private IoK8sApimachineryPkgApisMetaV1ListMeta metadata = null;
+  private V1ListMeta metadata = null;
 
   public V1beta1CertificateList apiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
@@ -106,7 +106,7 @@ public class V1beta1CertificateList {
     this.kind = kind;
   }
 
-  public V1beta1CertificateList metadata(IoK8sApimachineryPkgApisMetaV1ListMeta metadata) {
+  public V1beta1CertificateList metadata(V1ListMeta metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -116,11 +116,11 @@ public class V1beta1CertificateList {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public IoK8sApimachineryPkgApisMetaV1ListMeta getMetadata() {
+  public V1ListMeta getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(IoK8sApimachineryPkgApisMetaV1ListMeta metadata) {
+  public void setMetadata(V1ListMeta metadata) {
     this.metadata = metadata;
   }
 

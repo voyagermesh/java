@@ -123,7 +123,7 @@ No authorization required
 
 <a name="deleteCollectionNamespacedCertificate"></a>
 # **deleteCollectionNamespacedCertificate**
-> IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> V1Status deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -148,7 +148,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    V1Status result = apiInstance.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteCollectionNamespacedCertificate");
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
+[**V1Status**](V1Status.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ No authorization required
 
 <a name="deleteCollectionNamespacedIngress"></a>
 # **deleteCollectionNamespacedIngress**
-> IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> V1Status deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -211,7 +211,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    V1Status result = apiInstance.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteCollectionNamespacedIngress");
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
+[**V1Status**](V1Status.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ No authorization required
 
 <a name="deleteNamespacedCertificate"></a>
 # **deleteNamespacedCertificate**
-> IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
+> V1Status deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
 
 
 
@@ -265,13 +265,13 @@ delete a Certificate
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-IoK8sApimachineryPkgApisMetaV1DeleteOptions body = new IoK8sApimachineryPkgApisMetaV1DeleteOptions(); // IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
+V1DeleteOptions body = new V1DeleteOptions(); // V1DeleteOptions | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 Integer gracePeriodSeconds = 56; // Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
 Boolean orphanDependents = true; // Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
 String propagationPolicy = "propagationPolicy_example"; // String | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
 try {
-    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    V1Status result = apiInstance.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteNamespacedCertificate");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Certificate |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md)|  |
+ **body** | [**V1DeleteOptions**](V1DeleteOptions.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
  **gracePeriodSeconds** | **Integer**| The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional]
  **orphanDependents** | **Boolean**| Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional]
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
+[**V1Status**](V1Status.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ No authorization required
 
 <a name="deleteNamespacedIngress"></a>
 # **deleteNamespacedIngress**
-> IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
+> V1Status deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
 
 
 
@@ -322,13 +322,13 @@ delete an Ingress
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-IoK8sApimachineryPkgApisMetaV1DeleteOptions body = new IoK8sApimachineryPkgApisMetaV1DeleteOptions(); // IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
+V1DeleteOptions body = new V1DeleteOptions(); // V1DeleteOptions | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 Integer gracePeriodSeconds = 56; // Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
 Boolean orphanDependents = true; // Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
 String propagationPolicy = "propagationPolicy_example"; // String | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
 try {
-    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    V1Status result = apiInstance.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteNamespacedIngress");
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Ingress |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md)|  |
+ **body** | [**V1DeleteOptions**](V1DeleteOptions.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
  **gracePeriodSeconds** | **Integer**| The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional]
  **orphanDependents** | **Boolean**| Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional]
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
+[**V1Status**](V1Status.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ No authorization required
 
 <a name="getAPIResources"></a>
 # **getAPIResources**
-> IoK8sApimachineryPkgApisMetaV1APIResourceList getAPIResources()
+> V1APIResourceList getAPIResources()
 
 
 
@@ -378,7 +378,7 @@ get available resources
 
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 try {
-    IoK8sApimachineryPkgApisMetaV1APIResourceList result = apiInstance.getAPIResources();
+    V1APIResourceList result = apiInstance.getAPIResources();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#getAPIResources");
@@ -391,7 +391,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
+[**V1APIResourceList**](V1APIResourceList.md)
 
 ### Authorization
 
@@ -668,7 +668,7 @@ partially update the specified Certificate
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-IoK8sApimachineryPkgApisMetaV1Patch body = new IoK8sApimachineryPkgApisMetaV1Patch(); // IoK8sApimachineryPkgApisMetaV1Patch | 
+V1Patch body = new V1Patch(); // V1Patch | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
     V1beta1Certificate result = apiInstance.patchNamespacedCertificate(name, namespace, body, pretty);
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Certificate |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**IoK8sApimachineryPkgApisMetaV1Patch**](IoK8sApimachineryPkgApisMetaV1Patch.md)|  |
+ **body** | [**V1Patch**](V1Patch.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
@@ -719,7 +719,7 @@ partially update the specified Ingress
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-IoK8sApimachineryPkgApisMetaV1Patch body = new IoK8sApimachineryPkgApisMetaV1Patch(); // IoK8sApimachineryPkgApisMetaV1Patch | 
+V1Patch body = new V1Patch(); // V1Patch | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
     V1beta1Ingress result = apiInstance.patchNamespacedIngress(name, namespace, body, pretty);
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Ingress |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**IoK8sApimachineryPkgApisMetaV1Patch**](IoK8sApimachineryPkgApisMetaV1Patch.md)|  |
+ **body** | [**V1Patch**](V1Patch.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **String** | User can specify backend name for using it with custom acl Otherwise it will be generated |  [optional]
 **rewriteRules** | **List&lt;String&gt;** | Path rewrite rules with haproxy formatted regex.  Deprecated: Use backendRule, will be removed. |  [optional]
 **serviceName** | **String** | Specifies the name of the referenced service. |  [optional]
-**servicePort** | [**IoK8sApimachineryPkgUtilIntstrIntOrString**](IoK8sApimachineryPkgUtilIntstrIntOrString.md) | Specifies the port of the referenced service. |  [optional]
+**servicePort** | [**IntOrString**](IntOrString.md) | Specifies the port of the referenced service. |  [optional]
 
 
 

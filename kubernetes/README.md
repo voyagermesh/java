@@ -72,7 +72,7 @@ public class ApisApiExample {
         
         ApisApi apiInstance = new ApisApi();
         try {
-            IoK8sApimachineryPkgApisMetaV1APIGroupList result = apiInstance.getAPIVersions();
+            V1APIGroupList result = apiInstance.getAPIVersions();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApisApi#getAPIVersions");

@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgUtilIntstrIntOrString;
 import com.appscode.voyager.client.models.V1beta1IngressBackend;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.custom.IntOrString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -45,10 +45,10 @@ public class V1beta1TCPIngressRuleValue {
   private Boolean noTLS = null;
 
   @SerializedName("nodePort")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString nodePort = null;
+  private IntOrString nodePort = null;
 
   @SerializedName("port")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString port = null;
+  private IntOrString port = null;
 
   public V1beta1TCPIngressRuleValue address(String address) {
     this.address = address;
@@ -130,7 +130,7 @@ public class V1beta1TCPIngressRuleValue {
     this.noTLS = noTLS;
   }
 
-  public V1beta1TCPIngressRuleValue nodePort(IoK8sApimachineryPkgUtilIntstrIntOrString nodePort) {
+  public V1beta1TCPIngressRuleValue nodePort(IntOrString nodePort) {
     this.nodePort = nodePort;
     return this;
   }
@@ -140,15 +140,15 @@ public class V1beta1TCPIngressRuleValue {
    * @return nodePort
   **/
   @ApiModelProperty(value = "Specifies the node port of the referenced service.")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getNodePort() {
+  public IntOrString getNodePort() {
     return nodePort;
   }
 
-  public void setNodePort(IoK8sApimachineryPkgUtilIntstrIntOrString nodePort) {
+  public void setNodePort(IntOrString nodePort) {
     this.nodePort = nodePort;
   }
 
-  public V1beta1TCPIngressRuleValue port(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public V1beta1TCPIngressRuleValue port(IntOrString port) {
     this.port = port;
     return this;
   }
@@ -158,11 +158,11 @@ public class V1beta1TCPIngressRuleValue {
    * @return port
   **/
   @ApiModelProperty(value = "port to listen tcp connections.")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getPort() {
+  public IntOrString getPort() {
     return port;
   }
 
-  public void setPort(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public void setPort(IntOrString port) {
     this.port = port;
   }
 

@@ -14,13 +14,13 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgUtilIntstrIntOrString;
 import com.appscode.voyager.client.models.V1beta1HTTPIngressPath;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.custom.IntOrString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -40,13 +40,13 @@ public class V1beta1HTTPIngressRuleValue {
   private Boolean noTLS = null;
 
   @SerializedName("nodePort")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString nodePort = null;
+  private IntOrString nodePort = null;
 
   @SerializedName("paths")
   private List<V1beta1HTTPIngressPath> paths = new ArrayList<V1beta1HTTPIngressPath>();
 
   @SerializedName("port")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString port = null;
+  private IntOrString port = null;
 
   public V1beta1HTTPIngressRuleValue address(String address) {
     this.address = address;
@@ -84,7 +84,7 @@ public class V1beta1HTTPIngressRuleValue {
     this.noTLS = noTLS;
   }
 
-  public V1beta1HTTPIngressRuleValue nodePort(IoK8sApimachineryPkgUtilIntstrIntOrString nodePort) {
+  public V1beta1HTTPIngressRuleValue nodePort(IntOrString nodePort) {
     this.nodePort = nodePort;
     return this;
   }
@@ -94,11 +94,11 @@ public class V1beta1HTTPIngressRuleValue {
    * @return nodePort
   **/
   @ApiModelProperty(value = "Specifies the node port of the referenced service.")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getNodePort() {
+  public IntOrString getNodePort() {
     return nodePort;
   }
 
-  public void setNodePort(IoK8sApimachineryPkgUtilIntstrIntOrString nodePort) {
+  public void setNodePort(IntOrString nodePort) {
     this.nodePort = nodePort;
   }
 
@@ -125,7 +125,7 @@ public class V1beta1HTTPIngressRuleValue {
     this.paths = paths;
   }
 
-  public V1beta1HTTPIngressRuleValue port(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public V1beta1HTTPIngressRuleValue port(IntOrString port) {
     this.port = port;
     return this;
   }
@@ -135,11 +135,11 @@ public class V1beta1HTTPIngressRuleValue {
    * @return port
   **/
   @ApiModelProperty(value = "port to listen http(s) connections.")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getPort() {
+  public IntOrString getPort() {
     return port;
   }
 
-  public void setPort(IoK8sApimachineryPkgUtilIntstrIntOrString port) {
+  public void setPort(IntOrString port) {
     this.port = port;
   }
 

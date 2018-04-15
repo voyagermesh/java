@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **accountRef** | **String** |  |  [optional]
 **certStableURL** | **String** |  | 
 **certURL** | **String** |  | 
-**notAfter** | [**IoK8sApimachineryPkgApisMetaV1Time**](IoK8sApimachineryPkgApisMetaV1Time.md) |  |  [optional]
-**notBefore** | [**IoK8sApimachineryPkgApisMetaV1Time**](IoK8sApimachineryPkgApisMetaV1Time.md) |  |  [optional]
+**notAfter** | [**V1Time**](V1Time.md) |  |  [optional]
+**notBefore** | [**V1Time**](V1Time.md) |  |  [optional]
 **serialNumber** | **String** |  |  [optional]
 
 

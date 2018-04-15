@@ -14,12 +14,12 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApimachineryPkgUtilIntstrIntOrString;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.custom.IntOrString;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -50,7 +50,7 @@ public class V1beta1HTTPIngressBackend {
   private String serviceName = null;
 
   @SerializedName("servicePort")
-  private IoK8sApimachineryPkgUtilIntstrIntOrString servicePort = null;
+  private IntOrString servicePort = null;
 
   public V1beta1HTTPIngressBackend backendRules(List<String> backendRules) {
     this.backendRules = backendRules;
@@ -192,7 +192,7 @@ public class V1beta1HTTPIngressBackend {
     this.serviceName = serviceName;
   }
 
-  public V1beta1HTTPIngressBackend servicePort(IoK8sApimachineryPkgUtilIntstrIntOrString servicePort) {
+  public V1beta1HTTPIngressBackend servicePort(IntOrString servicePort) {
     this.servicePort = servicePort;
     return this;
   }
@@ -202,11 +202,11 @@ public class V1beta1HTTPIngressBackend {
    * @return servicePort
   **/
   @ApiModelProperty(value = "Specifies the port of the referenced service.")
-  public IoK8sApimachineryPkgUtilIntstrIntOrString getServicePort() {
+  public IntOrString getServicePort() {
     return servicePort;
   }
 
-  public void setServicePort(IoK8sApimachineryPkgUtilIntstrIntOrString servicePort) {
+  public void setServicePort(IntOrString servicePort) {
     this.servicePort = servicePort;
   }
 

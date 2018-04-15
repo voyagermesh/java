@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **hostNames** | **List&lt;String&gt;** | Host names to forward traffic to. If empty traffic will be forwarded to all subsets instance. If set only matched hosts will get the traffic. This is an handy way to send traffic to Specific StatefulSet pod. IE. Setting [web-0] will send traffic to only web-0 host for this StatefulSet, https://kubernetes.io/docs/tasks/stateful-application/basic-stateful-set/#creating-a-statefulset |  [optional]
 **name** | **String** | User can specify backend name for using it with custom acl Otherwise it will be generated |  [optional]
 **serviceName** | **String** | Specifies the name of the referenced service. |  [optional]
-**servicePort** | [**IoK8sApimachineryPkgUtilIntstrIntOrString**](IoK8sApimachineryPkgUtilIntstrIntOrString.md) | Specifies the port of the referenced service. |  [optional]
+**servicePort** | [**IntOrString**](IntOrString.md) | Specifies the port of the referenced service. |  [optional]
 
 
 

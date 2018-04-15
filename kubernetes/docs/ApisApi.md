@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAPIVersions"></a>
 # **getAPIVersions**
-> IoK8sApimachineryPkgApisMetaV1APIGroupList getAPIVersions()
+> V1APIGroupList getAPIVersions()
 
 
 
@@ -24,7 +24,7 @@ get available API versions
 
 ApisApi apiInstance = new ApisApi();
 try {
-    IoK8sApimachineryPkgApisMetaV1APIGroupList result = apiInstance.getAPIVersions();
+    V1APIGroupList result = apiInstance.getAPIVersions();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApisApi#getAPIVersions");
@@ -37,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IoK8sApimachineryPkgApisMetaV1APIGroupList**](IoK8sApimachineryPkgApisMetaV1APIGroupList.md)
+[**V1APIGroupList**](V1APIGroupList.md)
 
 ### Authorization
 

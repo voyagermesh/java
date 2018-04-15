@@ -14,12 +14,12 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.IoK8sApiCoreV1LoadBalancerStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1LoadBalancerStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class V1beta1IngressStatus {
   @SerializedName("loadBalancer")
-  private IoK8sApiCoreV1LoadBalancerStatus loadBalancer = null;
+  private V1LoadBalancerStatus loadBalancer = null;
 
-  public V1beta1IngressStatus loadBalancer(IoK8sApiCoreV1LoadBalancerStatus loadBalancer) {
+  public V1beta1IngressStatus loadBalancer(V1LoadBalancerStatus loadBalancer) {
     this.loadBalancer = loadBalancer;
     return this;
   }
@@ -43,11 +43,11 @@ public class V1beta1IngressStatus {
    * @return loadBalancer
   **/
   @ApiModelProperty(value = "LoadBalancer contains the current status of the load-balancer.")
-  public IoK8sApiCoreV1LoadBalancerStatus getLoadBalancer() {
+  public V1LoadBalancerStatus getLoadBalancer() {
     return loadBalancer;
   }
 
-  public void setLoadBalancer(IoK8sApiCoreV1LoadBalancerStatus loadBalancer) {
+  public void setLoadBalancer(V1LoadBalancerStatus loadBalancer) {
     this.loadBalancer = loadBalancer;
   }
 
