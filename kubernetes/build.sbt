@@ -1,6 +1,6 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "io.kubernetes",
+    organization := "com.appscode.voyager",
     name := "client-java",
     version := "1.0-SNAPSHOT",
     scalaVersion := "2.11.4",
@@ -13,6 +13,7 @@ lazy val root = (project in file(".")).
       "com.squareup.okhttp" % "okhttp" % "2.7.5",
       "com.squareup.okhttp" % "logging-interceptor" % "2.7.5",
       "com.google.code.gson" % "gson" % "2.8.1",
+      "io.kubernetes" % "client-java" % "1.0.0-beta3",
       "joda-time" % "joda-time" % "2.9.9" % "compile",
       "junit" % "junit" % "4.12" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
