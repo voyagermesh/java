@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.appscode.voyager.client.models.V1DeleteOptions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.apis;
 
 import com.appscode.voyager.client.ApiException;
-import com.appscode.voyager.client.models.V1APIGroupList;
+import io.kubernetes.client.models.V1APIGroupList;
 import org.junit.Test;
 import org.junit.Ignore;
 

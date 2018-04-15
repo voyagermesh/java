@@ -14,14 +14,14 @@
 package com.appscode.voyager.client.models;
 
 import java.util.Objects;
-import com.appscode.voyager.client.models.V1NodeAffinity;
-import com.appscode.voyager.client.models.V1PodAffinity;
-import com.appscode.voyager.client.models.V1PodAntiAffinity;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.kubernetes.client.models.V1NodeAffinity;
+import io.kubernetes.client.models.V1PodAffinity;
+import io.kubernetes.client.models.V1PodAntiAffinity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;

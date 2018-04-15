@@ -18,9 +18,8 @@ import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1b
 import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList;
 import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress;
 import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList;
-import com.appscode.voyager.client.models.V1APIResourceList;
-import com.appscode.voyager.client.models.V1DeleteOptions;
-import com.appscode.voyager.client.models.V1Status;
+import io.kubernetes.client.models.V1APIResourceList;
+import io.kubernetes.client.models.V1Status;
 import org.junit.Test;
 import org.junit.Ignore;
 
