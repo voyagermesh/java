@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="createNamespacedCertificate"></a>
 # **createNamespacedCertificate**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate createNamespacedCertificate(namespace, body, pretty)
+> V1beta1Certificate createNamespacedCertificate(namespace, body, pretty)
 
 
 
@@ -40,10 +40,10 @@ create a Certificate
 
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body = new ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate(); // ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate | 
+V1beta1Certificate body = new V1beta1Certificate(); // V1beta1Certificate | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate result = apiInstance.createNamespacedCertificate(namespace, body, pretty);
+    V1beta1Certificate result = apiInstance.createNamespacedCertificate(namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#createNamespacedCertificate");
@@ -56,12 +56,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)|  |
+ **body** | [**V1beta1Certificate**](V1beta1Certificate.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)
+[**V1beta1Certificate**](V1beta1Certificate.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ No authorization required
 
 <a name="createNamespacedIngress"></a>
 # **createNamespacedIngress**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress createNamespacedIngress(namespace, body, pretty)
+> V1beta1Ingress createNamespacedIngress(namespace, body, pretty)
 
 
 
@@ -89,10 +89,10 @@ create an Ingress
 
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body = new ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress(); // ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress | 
+V1beta1Ingress body = new V1beta1Ingress(); // V1beta1Ingress | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress result = apiInstance.createNamespacedIngress(namespace, body, pretty);
+    V1beta1Ingress result = apiInstance.createNamespacedIngress(namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#createNamespacedIngress");
@@ -105,12 +105,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)|  |
+ **body** | [**V1beta1Ingress**](V1beta1Ingress.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)
+[**V1beta1Ingress**](V1beta1Ingress.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ No authorization required
 
 <a name="deleteCollectionNamespacedCertificate"></a>
 # **deleteCollectionNamespacedCertificate**
-> V1Status deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -148,7 +148,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    V1Status result = apiInstance.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteCollectionNamespacedCertificate");
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Status**](V1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ No authorization required
 
 <a name="deleteCollectionNamespacedIngress"></a>
 # **deleteCollectionNamespacedIngress**
-> V1Status deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -211,7 +211,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    V1Status result = apiInstance.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteCollectionNamespacedIngress");
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Status**](V1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ No authorization required
 
 <a name="deleteNamespacedCertificate"></a>
 # **deleteNamespacedCertificate**
-> V1Status deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
+> IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
 
 
 
@@ -265,13 +265,13 @@ delete a Certificate
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-V1DeleteOptions body = new V1DeleteOptions(); // V1DeleteOptions | 
+IoK8sApimachineryPkgApisMetaV1DeleteOptions body = new IoK8sApimachineryPkgApisMetaV1DeleteOptions(); // IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 Integer gracePeriodSeconds = 56; // Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
 Boolean orphanDependents = true; // Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
 String propagationPolicy = "propagationPolicy_example"; // String | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
 try {
-    V1Status result = apiInstance.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteNamespacedCertificate");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Certificate |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**V1DeleteOptions**](V1DeleteOptions.md)|  |
+ **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
  **gracePeriodSeconds** | **Integer**| The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional]
  **orphanDependents** | **Boolean**| Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional]
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Status**](V1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ No authorization required
 
 <a name="deleteNamespacedIngress"></a>
 # **deleteNamespacedIngress**
-> V1Status deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
+> IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy)
 
 
 
@@ -322,13 +322,13 @@ delete an Ingress
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-V1DeleteOptions body = new V1DeleteOptions(); // V1DeleteOptions | 
+IoK8sApimachineryPkgApisMetaV1DeleteOptions body = new IoK8sApimachineryPkgApisMetaV1DeleteOptions(); // IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 Integer gracePeriodSeconds = 56; // Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
 Boolean orphanDependents = true; // Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
 String propagationPolicy = "propagationPolicy_example"; // String | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
 try {
-    V1Status result = apiInstance.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    IoK8sApimachineryPkgApisMetaV1Status result = apiInstance.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#deleteNamespacedIngress");
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Ingress |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**V1DeleteOptions**](V1DeleteOptions.md)|  |
+ **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
  **gracePeriodSeconds** | **Integer**| The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional]
  **orphanDependents** | **Boolean**| Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional]
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**V1Status**](V1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ No authorization required
 
 <a name="getAPIResources"></a>
 # **getAPIResources**
-> V1APIResourceList getAPIResources()
+> IoK8sApimachineryPkgApisMetaV1APIResourceList getAPIResources()
 
 
 
@@ -378,7 +378,7 @@ get available resources
 
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 try {
-    V1APIResourceList result = apiInstance.getAPIResources();
+    IoK8sApimachineryPkgApisMetaV1APIResourceList result = apiInstance.getAPIResources();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#getAPIResources");
@@ -391,7 +391,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1APIResourceList**](V1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -404,7 +404,7 @@ No authorization required
 
 <a name="listCertificateForAllNamespaces"></a>
 # **listCertificateForAllNamespaces**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
+> V1beta1CertificateList listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -428,7 +428,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList result = apiInstance.listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    V1beta1CertificateList result = apiInstance.listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#listCertificateForAllNamespaces");
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList**](ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList.md)
+[**V1beta1CertificateList**](V1beta1CertificateList.md)
 
 ### Authorization
 
@@ -465,7 +465,7 @@ No authorization required
 
 <a name="listIngressForAllNamespaces"></a>
 # **listIngressForAllNamespaces**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
+> V1beta1IngressList listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -489,7 +489,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList result = apiInstance.listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    V1beta1IngressList result = apiInstance.listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#listIngressForAllNamespaces");
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList**](ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList.md)
+[**V1beta1IngressList**](V1beta1IngressList.md)
 
 ### Authorization
 
@@ -526,7 +526,7 @@ No authorization required
 
 <a name="listNamespacedCertificate"></a>
 # **listNamespacedCertificate**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> V1beta1CertificateList listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -551,7 +551,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList result = apiInstance.listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    V1beta1CertificateList result = apiInstance.listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#listNamespacedCertificate");
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList**](ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList.md)
+[**V1beta1CertificateList**](V1beta1CertificateList.md)
 
 ### Authorization
 
@@ -589,7 +589,7 @@ No authorization required
 
 <a name="listNamespacedIngress"></a>
 # **listNamespacedIngress**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> V1beta1IngressList listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -614,7 +614,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList result = apiInstance.listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    V1beta1IngressList result = apiInstance.listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#listNamespacedIngress");
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList**](ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList.md)
+[**V1beta1IngressList**](V1beta1IngressList.md)
 
 ### Authorization
 
@@ -652,7 +652,7 @@ No authorization required
 
 <a name="patchNamespacedCertificate"></a>
 # **patchNamespacedCertificate**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate patchNamespacedCertificate(name, namespace, body, pretty)
+> V1beta1Certificate patchNamespacedCertificate(name, namespace, body, pretty)
 
 
 
@@ -668,10 +668,10 @@ partially update the specified Certificate
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-Object body = null; // Object | 
+IoK8sApimachineryPkgApisMetaV1Patch body = new IoK8sApimachineryPkgApisMetaV1Patch(); // IoK8sApimachineryPkgApisMetaV1Patch | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate result = apiInstance.patchNamespacedCertificate(name, namespace, body, pretty);
+    V1beta1Certificate result = apiInstance.patchNamespacedCertificate(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#patchNamespacedCertificate");
@@ -685,12 +685,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Certificate |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | **Object**|  |
+ **body** | [**IoK8sApimachineryPkgApisMetaV1Patch**](IoK8sApimachineryPkgApisMetaV1Patch.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)
+[**V1beta1Certificate**](V1beta1Certificate.md)
 
 ### Authorization
 
@@ -703,7 +703,7 @@ No authorization required
 
 <a name="patchNamespacedIngress"></a>
 # **patchNamespacedIngress**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress patchNamespacedIngress(name, namespace, body, pretty)
+> V1beta1Ingress patchNamespacedIngress(name, namespace, body, pretty)
 
 
 
@@ -719,10 +719,10 @@ partially update the specified Ingress
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-Object body = null; // Object | 
+IoK8sApimachineryPkgApisMetaV1Patch body = new IoK8sApimachineryPkgApisMetaV1Patch(); // IoK8sApimachineryPkgApisMetaV1Patch | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress result = apiInstance.patchNamespacedIngress(name, namespace, body, pretty);
+    V1beta1Ingress result = apiInstance.patchNamespacedIngress(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#patchNamespacedIngress");
@@ -736,12 +736,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Ingress |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | **Object**|  |
+ **body** | [**IoK8sApimachineryPkgApisMetaV1Patch**](IoK8sApimachineryPkgApisMetaV1Patch.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)
+[**V1beta1Ingress**](V1beta1Ingress.md)
 
 ### Authorization
 
@@ -754,7 +754,7 @@ No authorization required
 
 <a name="readNamespacedCertificate"></a>
 # **readNamespacedCertificate**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate readNamespacedCertificate(name, namespace, pretty)
+> V1beta1Certificate readNamespacedCertificate(name, namespace, pretty)
 
 
 
@@ -772,7 +772,7 @@ String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate result = apiInstance.readNamespacedCertificate(name, namespace, pretty);
+    V1beta1Certificate result = apiInstance.readNamespacedCertificate(name, namespace, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#readNamespacedCertificate");
@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)
+[**V1beta1Certificate**](V1beta1Certificate.md)
 
 ### Authorization
 
@@ -803,7 +803,7 @@ No authorization required
 
 <a name="readNamespacedIngress"></a>
 # **readNamespacedIngress**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress readNamespacedIngress(name, namespace, pretty)
+> V1beta1Ingress readNamespacedIngress(name, namespace, pretty)
 
 
 
@@ -821,7 +821,7 @@ String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress result = apiInstance.readNamespacedIngress(name, namespace, pretty);
+    V1beta1Ingress result = apiInstance.readNamespacedIngress(name, namespace, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#readNamespacedIngress");
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)
+[**V1beta1Ingress**](V1beta1Ingress.md)
 
 ### Authorization
 
@@ -852,7 +852,7 @@ No authorization required
 
 <a name="replaceNamespacedCertificate"></a>
 # **replaceNamespacedCertificate**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate replaceNamespacedCertificate(name, namespace, body, pretty)
+> V1beta1Certificate replaceNamespacedCertificate(name, namespace, body, pretty)
 
 
 
@@ -868,10 +868,10 @@ replace the specified Certificate
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Certificate
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body = new ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate(); // ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate | 
+V1beta1Certificate body = new V1beta1Certificate(); // V1beta1Certificate | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate result = apiInstance.replaceNamespacedCertificate(name, namespace, body, pretty);
+    V1beta1Certificate result = apiInstance.replaceNamespacedCertificate(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#replaceNamespacedCertificate");
@@ -885,12 +885,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Certificate |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)|  |
+ **body** | [**V1beta1Certificate**](V1beta1Certificate.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)
+[**V1beta1Certificate**](V1beta1Certificate.md)
 
 ### Authorization
 
@@ -903,7 +903,7 @@ No authorization required
 
 <a name="replaceNamespacedIngress"></a>
 # **replaceNamespacedIngress**
-> ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress replaceNamespacedIngress(name, namespace, body, pretty)
+> V1beta1Ingress replaceNamespacedIngress(name, namespace, body, pretty)
 
 
 
@@ -919,10 +919,10 @@ replace the specified Ingress
 VoyagerAppscodeComV1beta1Api apiInstance = new VoyagerAppscodeComV1beta1Api();
 String name = "name_example"; // String | name of the Ingress
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body = new ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress(); // ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress | 
+V1beta1Ingress body = new V1beta1Ingress(); // V1beta1Ingress | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress result = apiInstance.replaceNamespacedIngress(name, namespace, body, pretty);
+    V1beta1Ingress result = apiInstance.replaceNamespacedIngress(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComV1beta1Api#replaceNamespacedIngress");
@@ -936,12 +936,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the Ingress |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)|  |
+ **body** | [**V1beta1Ingress**](V1beta1Ingress.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress**](ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)
+[**V1beta1Ingress**](V1beta1Ingress.md)
 
 ### Authorization
 

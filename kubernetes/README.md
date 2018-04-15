@@ -72,7 +72,7 @@ public class ApisApiExample {
         
         ApisApi apiInstance = new ApisApi();
         try {
-            V1APIGroupList result = apiInstance.getAPIVersions();
+            IoK8sApimachineryPkgApisMetaV1APIGroupList result = apiInstance.getAPIVersions();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ApisApi#getAPIVersions");
@@ -90,18 +90,6 @@ All URIs are relative to *https://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ApisApi* | [**getAPIVersions**](docs/ApisApi.md#getAPIVersions) | **GET** /apis/ | 
-*CustomObjectsApi* | [**createClusterCustomObject**](docs/CustomObjectsApi.md#createClusterCustomObject) | **POST** /apis/{group}/{version}/{plural} | 
-*CustomObjectsApi* | [**createNamespacedCustomObject**](docs/CustomObjectsApi.md#createNamespacedCustomObject) | **POST** /apis/{group}/{version}/namespaces/{namespace}/{plural} | 
-*CustomObjectsApi* | [**deleteClusterCustomObject**](docs/CustomObjectsApi.md#deleteClusterCustomObject) | **DELETE** /apis/{group}/{version}/{plural}/{name} | 
-*CustomObjectsApi* | [**deleteNamespacedCustomObject**](docs/CustomObjectsApi.md#deleteNamespacedCustomObject) | **DELETE** /apis/{group}/{version}/namespaces/{namespace}/{plural}/{name} | 
-*CustomObjectsApi* | [**getClusterCustomObject**](docs/CustomObjectsApi.md#getClusterCustomObject) | **GET** /apis/{group}/{version}/{plural}/{name} | 
-*CustomObjectsApi* | [**getNamespacedCustomObject**](docs/CustomObjectsApi.md#getNamespacedCustomObject) | **GET** /apis/{group}/{version}/namespaces/{namespace}/{plural}/{name} | 
-*CustomObjectsApi* | [**listClusterCustomObject**](docs/CustomObjectsApi.md#listClusterCustomObject) | **GET** /apis/{group}/{version}/{plural} | 
-*CustomObjectsApi* | [**listNamespacedCustomObject**](docs/CustomObjectsApi.md#listNamespacedCustomObject) | **GET** /apis/{group}/{version}/namespaces/{namespace}/{plural} | 
-*CustomObjectsApi* | [**patchClusterCustomObject**](docs/CustomObjectsApi.md#patchClusterCustomObject) | **PATCH** /apis/{group}/{version}/{plural}/{name} | 
-*CustomObjectsApi* | [**patchNamespacedCustomObject**](docs/CustomObjectsApi.md#patchNamespacedCustomObject) | **PATCH** /apis/{group}/{version}/namespaces/{namespace}/{plural}/{name} | 
-*CustomObjectsApi* | [**replaceClusterCustomObject**](docs/CustomObjectsApi.md#replaceClusterCustomObject) | **PUT** /apis/{group}/{version}/{plural}/{name} | 
-*CustomObjectsApi* | [**replaceNamespacedCustomObject**](docs/CustomObjectsApi.md#replaceNamespacedCustomObject) | **PUT** /apis/{group}/{version}/namespaces/{namespace}/{plural}/{name} | 
 *VoyagerAppscodeComApi* | [**getAPIGroup**](docs/VoyagerAppscodeComApi.md#getAPIGroup) | **GET** /apis/voyager.appscode.com/ | 
 *VoyagerAppscodeComV1beta1Api* | [**createNamespacedCertificate**](docs/VoyagerAppscodeComV1beta1Api.md#createNamespacedCertificate) | **POST** /apis/voyager.appscode.com/v1beta1/namespaces/{namespace}/certificates | 
 *VoyagerAppscodeComV1beta1Api* | [**createNamespacedIngress**](docs/VoyagerAppscodeComV1beta1Api.md#createNamespacedIngress) | **POST** /apis/voyager.appscode.com/v1beta1/namespaces/{namespace}/ingresses | 
@@ -124,69 +112,34 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1ACMECertificateDetails](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1ACMECertificateDetails.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1AuthOption](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1AuthOption.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1BasicAuth](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1BasicAuth.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateCondition](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateCondition.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateDetails](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateDetails.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateSpec](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateSpec.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateStatus](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateStatus.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateStorage](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateStorage.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1ChallengeProvider](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1ChallengeProvider.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1DNSChallengeProvider](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1DNSChallengeProvider.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1FrontendRule](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1FrontendRule.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPChallengeProvider](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPChallengeProvider.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressBackend](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressBackend.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressPath](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressPath.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressRuleValue](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1HTTPIngressRuleValue.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressBackend](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressBackend.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressRule](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressRule.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressSpec](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressSpec.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressStatus](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressStatus.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressTLS](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressTLS.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1LocalTypedReference](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1LocalTypedReference.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1TCPIngressRuleValue](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1TCPIngressRuleValue.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1TLSAuth](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1TLSAuth.md)
- - [ComGithubAppscodeVoyagerApisVoyagerV1beta1VaultStore](docs/ComGithubAppscodeVoyagerApisVoyagerV1beta1VaultStore.md)
- - [RuntimeRawExtension](docs/RuntimeRawExtension.md)
- - [V1APIGroup](docs/V1APIGroup.md)
- - [V1APIGroupList](docs/V1APIGroupList.md)
- - [V1APIResource](docs/V1APIResource.md)
- - [V1APIResourceList](docs/V1APIResourceList.md)
- - [V1Affinity](docs/V1Affinity.md)
- - [V1DeleteOptions](docs/V1DeleteOptions.md)
- - [V1GroupVersionForDiscovery](docs/V1GroupVersionForDiscovery.md)
- - [V1Initializer](docs/V1Initializer.md)
- - [V1Initializers](docs/V1Initializers.md)
- - [V1LabelSelector](docs/V1LabelSelector.md)
- - [V1LabelSelectorRequirement](docs/V1LabelSelectorRequirement.md)
- - [V1ListMeta](docs/V1ListMeta.md)
- - [V1LoadBalancerIngress](docs/V1LoadBalancerIngress.md)
- - [V1LoadBalancerStatus](docs/V1LoadBalancerStatus.md)
- - [V1LocalObjectReference](docs/V1LocalObjectReference.md)
- - [V1NodeAffinity](docs/V1NodeAffinity.md)
- - [V1NodeSelector](docs/V1NodeSelector.md)
- - [V1NodeSelectorRequirement](docs/V1NodeSelectorRequirement.md)
- - [V1NodeSelectorTerm](docs/V1NodeSelectorTerm.md)
- - [V1ObjectMeta](docs/V1ObjectMeta.md)
- - [V1OwnerReference](docs/V1OwnerReference.md)
- - [V1PodAffinity](docs/V1PodAffinity.md)
- - [V1PodAffinityTerm](docs/V1PodAffinityTerm.md)
- - [V1PodAntiAffinity](docs/V1PodAntiAffinity.md)
- - [V1Preconditions](docs/V1Preconditions.md)
- - [V1PreferredSchedulingTerm](docs/V1PreferredSchedulingTerm.md)
- - [V1ResourceRequirements](docs/V1ResourceRequirements.md)
- - [V1ServerAddressByClientCIDR](docs/V1ServerAddressByClientCIDR.md)
- - [V1Status](docs/V1Status.md)
- - [V1StatusCause](docs/V1StatusCause.md)
- - [V1StatusDetails](docs/V1StatusDetails.md)
- - [V1Toleration](docs/V1Toleration.md)
- - [V1WatchEvent](docs/V1WatchEvent.md)
- - [V1WeightedPodAffinityTerm](docs/V1WeightedPodAffinityTerm.md)
+ - [V1beta1ACMECertificateDetails](docs/V1beta1ACMECertificateDetails.md)
+ - [V1beta1AuthOption](docs/V1beta1AuthOption.md)
+ - [V1beta1BasicAuth](docs/V1beta1BasicAuth.md)
+ - [V1beta1Certificate](docs/V1beta1Certificate.md)
+ - [V1beta1CertificateCondition](docs/V1beta1CertificateCondition.md)
+ - [V1beta1CertificateDetails](docs/V1beta1CertificateDetails.md)
+ - [V1beta1CertificateList](docs/V1beta1CertificateList.md)
+ - [V1beta1CertificateSpec](docs/V1beta1CertificateSpec.md)
+ - [V1beta1CertificateStatus](docs/V1beta1CertificateStatus.md)
+ - [V1beta1CertificateStorage](docs/V1beta1CertificateStorage.md)
+ - [V1beta1ChallengeProvider](docs/V1beta1ChallengeProvider.md)
+ - [V1beta1DNSChallengeProvider](docs/V1beta1DNSChallengeProvider.md)
+ - [V1beta1FrontendRule](docs/V1beta1FrontendRule.md)
+ - [V1beta1HTTPChallengeProvider](docs/V1beta1HTTPChallengeProvider.md)
+ - [V1beta1HTTPIngressBackend](docs/V1beta1HTTPIngressBackend.md)
+ - [V1beta1HTTPIngressPath](docs/V1beta1HTTPIngressPath.md)
+ - [V1beta1HTTPIngressRuleValue](docs/V1beta1HTTPIngressRuleValue.md)
+ - [V1beta1Ingress](docs/V1beta1Ingress.md)
+ - [V1beta1IngressBackend](docs/V1beta1IngressBackend.md)
+ - [V1beta1IngressList](docs/V1beta1IngressList.md)
+ - [V1beta1IngressRule](docs/V1beta1IngressRule.md)
+ - [V1beta1IngressSpec](docs/V1beta1IngressSpec.md)
+ - [V1beta1IngressStatus](docs/V1beta1IngressStatus.md)
+ - [V1beta1IngressTLS](docs/V1beta1IngressTLS.md)
+ - [V1beta1LocalTypedReference](docs/V1beta1LocalTypedReference.md)
+ - [V1beta1TCPIngressRuleValue](docs/V1beta1TCPIngressRuleValue.md)
+ - [V1beta1TLSAuth](docs/V1beta1TLSAuth.md)
+ - [V1beta1VaultStore](docs/V1beta1VaultStore.md)
 
 
 ## Documentation for Authorization

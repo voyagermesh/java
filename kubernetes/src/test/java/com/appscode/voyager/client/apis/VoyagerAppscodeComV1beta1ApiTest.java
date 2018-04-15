@@ -14,12 +14,14 @@
 package com.appscode.voyager.client.apis;
 
 import com.appscode.voyager.client.ApiException;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList;
-import io.kubernetes.client.models.V1APIResourceList;
-import io.kubernetes.client.models.V1Status;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIResourceList;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1DeleteOptions;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Patch;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Status;
+import com.appscode.voyager.client.models.V1beta1Certificate;
+import com.appscode.voyager.client.models.V1beta1CertificateList;
+import com.appscode.voyager.client.models.V1beta1Ingress;
+import com.appscode.voyager.client.models.V1beta1IngressList;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -48,9 +50,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     @Test
     public void createNamespacedCertificateTest() throws ApiException {
         String namespace = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body = null;
+        V1beta1Certificate body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate response = api.createNamespacedCertificate(namespace, body, pretty);
+        V1beta1Certificate response = api.createNamespacedCertificate(namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -66,9 +68,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     @Test
     public void createNamespacedIngressTest() throws ApiException {
         String namespace = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body = null;
+        V1beta1Ingress body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress response = api.createNamespacedIngress(namespace, body, pretty);
+        V1beta1Ingress response = api.createNamespacedIngress(namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -93,7 +95,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        V1Status response = api.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+        IoK8sApimachineryPkgApisMetaV1Status response = api.deleteCollectionNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -118,7 +120,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        V1Status response = api.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+        IoK8sApimachineryPkgApisMetaV1Status response = api.deleteCollectionNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -135,12 +137,12 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void deleteNamespacedCertificateTest() throws ApiException {
         String name = null;
         String namespace = null;
-        V1DeleteOptions body = null;
+        IoK8sApimachineryPkgApisMetaV1DeleteOptions body = null;
         String pretty = null;
         Integer gracePeriodSeconds = null;
         Boolean orphanDependents = null;
         String propagationPolicy = null;
-        V1Status response = api.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+        IoK8sApimachineryPkgApisMetaV1Status response = api.deleteNamespacedCertificate(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
 
         // TODO: test validations
     }
@@ -157,12 +159,12 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void deleteNamespacedIngressTest() throws ApiException {
         String name = null;
         String namespace = null;
-        V1DeleteOptions body = null;
+        IoK8sApimachineryPkgApisMetaV1DeleteOptions body = null;
         String pretty = null;
         Integer gracePeriodSeconds = null;
         Boolean orphanDependents = null;
         String propagationPolicy = null;
-        V1Status response = api.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+        IoK8sApimachineryPkgApisMetaV1Status response = api.deleteNamespacedIngress(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
 
         // TODO: test validations
     }
@@ -177,7 +179,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
      */
     @Test
     public void getAPIResourcesTest() throws ApiException {
-        V1APIResourceList response = api.getAPIResources();
+        IoK8sApimachineryPkgApisMetaV1APIResourceList response = api.getAPIResources();
 
         // TODO: test validations
     }
@@ -201,7 +203,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList response = api.listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+        V1beta1CertificateList response = api.listCertificateForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -225,7 +227,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList response = api.listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+        V1beta1IngressList response = api.listIngressForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -250,7 +252,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList response = api.listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+        V1beta1CertificateList response = api.listNamespacedCertificate(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -275,7 +277,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList response = api.listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+        V1beta1IngressList response = api.listNamespacedIngress(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -292,9 +294,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void patchNamespacedCertificateTest() throws ApiException {
         String name = null;
         String namespace = null;
-        Object body = null;
+        IoK8sApimachineryPkgApisMetaV1Patch body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate response = api.patchNamespacedCertificate(name, namespace, body, pretty);
+        V1beta1Certificate response = api.patchNamespacedCertificate(name, namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -311,9 +313,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void patchNamespacedIngressTest() throws ApiException {
         String name = null;
         String namespace = null;
-        Object body = null;
+        IoK8sApimachineryPkgApisMetaV1Patch body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress response = api.patchNamespacedIngress(name, namespace, body, pretty);
+        V1beta1Ingress response = api.patchNamespacedIngress(name, namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -331,7 +333,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String name = null;
         String namespace = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate response = api.readNamespacedCertificate(name, namespace, pretty);
+        V1beta1Certificate response = api.readNamespacedCertificate(name, namespace, pretty);
 
         // TODO: test validations
     }
@@ -349,7 +351,7 @@ public class VoyagerAppscodeComV1beta1ApiTest {
         String name = null;
         String namespace = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress response = api.readNamespacedIngress(name, namespace, pretty);
+        V1beta1Ingress response = api.readNamespacedIngress(name, namespace, pretty);
 
         // TODO: test validations
     }
@@ -366,9 +368,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void replaceNamespacedCertificateTest() throws ApiException {
         String name = null;
         String namespace = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body = null;
+        V1beta1Certificate body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate response = api.replaceNamespacedCertificate(name, namespace, body, pretty);
+        V1beta1Certificate response = api.replaceNamespacedCertificate(name, namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -385,9 +387,9 @@ public class VoyagerAppscodeComV1beta1ApiTest {
     public void replaceNamespacedIngressTest() throws ApiException {
         String name = null;
         String namespace = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body = null;
+        V1beta1Ingress body = null;
         String pretty = null;
-        ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress response = api.replaceNamespacedIngress(name, namespace, body, pretty);
+        V1beta1Ingress response = api.replaceNamespacedIngress(name, namespace, body, pretty);
 
         // TODO: test validations
     }

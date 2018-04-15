@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.apis;
 
 import com.appscode.voyager.client.ApiException;
-import io.kubernetes.client.models.V1APIGroupList;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIGroupList;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class ApisApiTest {
      */
     @Test
     public void getAPIVersionsTest() throws ApiException {
-        V1APIGroupList response = api.getAPIVersions();
+        IoK8sApimachineryPkgApisMetaV1APIGroupList response = api.getAPIVersions();
 
         // TODO: test validations
     }

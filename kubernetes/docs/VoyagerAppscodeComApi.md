@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAPIGroup"></a>
 # **getAPIGroup**
-> V1APIGroup getAPIGroup()
+> IoK8sApimachineryPkgApisMetaV1APIGroup getAPIGroup()
 
 
 
@@ -24,7 +24,7 @@ get information of a group
 
 VoyagerAppscodeComApi apiInstance = new VoyagerAppscodeComApi();
 try {
-    V1APIGroup result = apiInstance.getAPIGroup();
+    IoK8sApimachineryPkgApisMetaV1APIGroup result = apiInstance.getAPIGroup();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VoyagerAppscodeComApi#getAPIGroup");
@@ -37,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1APIGroup**](V1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 

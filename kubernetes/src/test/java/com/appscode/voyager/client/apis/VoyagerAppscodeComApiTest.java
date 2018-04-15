@@ -14,7 +14,7 @@
 package com.appscode.voyager.client.apis;
 
 import com.appscode.voyager.client.ApiException;
-import io.kubernetes.client.models.V1APIGroup;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIGroup;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class VoyagerAppscodeComApiTest {
      */
     @Test
     public void getAPIGroupTest() throws ApiException {
-        V1APIGroup response = api.getAPIGroup();
+        IoK8sApimachineryPkgApisMetaV1APIGroup response = api.getAPIGroup();
 
         // TODO: test validations
     }

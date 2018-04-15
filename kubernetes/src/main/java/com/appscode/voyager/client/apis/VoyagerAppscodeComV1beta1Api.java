@@ -27,12 +27,14 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress;
-import com.appscode.voyager.client.models.ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList;
-import io.kubernetes.client.models.V1APIResourceList;
-import io.kubernetes.client.models.V1Status;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1APIResourceList;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1DeleteOptions;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Patch;
+import com.appscode.voyager.client.models.IoK8sApimachineryPkgApisMetaV1Status;
+import com.appscode.voyager.client.models.V1beta1Certificate;
+import com.appscode.voyager.client.models.V1beta1CertificateList;
+import com.appscode.voyager.client.models.V1beta1Ingress;
+import com.appscode.voyager.client.models.V1beta1IngressList;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,7 +71,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedCertificateCall(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedCertificateCall(String namespace, V1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -114,7 +116,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createNamespacedCertificateValidateBeforeCall(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createNamespacedCertificateValidateBeforeCall(String namespace, V1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'namespace' is set
         if (namespace == null) {
@@ -142,11 +144,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate
+     * @return V1beta1Certificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate createNamespacedCertificate(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> resp = createNamespacedCertificateWithHttpInfo(namespace, body, pretty);
+    public V1beta1Certificate createNamespacedCertificate(String namespace, V1beta1Certificate body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Certificate> resp = createNamespacedCertificateWithHttpInfo(namespace, body, pretty);
         return resp.getData();
     }
 
@@ -156,12 +158,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate&gt;
+     * @return ApiResponse&lt;V1beta1Certificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> createNamespacedCertificateWithHttpInfo(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Certificate> createNamespacedCertificateWithHttpInfo(String namespace, V1beta1Certificate body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = createNamespacedCertificateValidateBeforeCall(namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -175,7 +177,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedCertificateAsync(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> callback) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedCertificateAsync(String namespace, V1beta1Certificate body, String pretty, final ApiCallback<V1beta1Certificate> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -197,7 +199,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = createNamespacedCertificateValidateBeforeCall(namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -211,7 +213,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedIngressCall(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedIngressCall(String namespace, V1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -256,7 +258,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createNamespacedIngressValidateBeforeCall(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createNamespacedIngressValidateBeforeCall(String namespace, V1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'namespace' is set
         if (namespace == null) {
@@ -284,11 +286,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress
+     * @return V1beta1Ingress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress createNamespacedIngress(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> resp = createNamespacedIngressWithHttpInfo(namespace, body, pretty);
+    public V1beta1Ingress createNamespacedIngress(String namespace, V1beta1Ingress body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Ingress> resp = createNamespacedIngressWithHttpInfo(namespace, body, pretty);
         return resp.getData();
     }
 
@@ -298,12 +300,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress&gt;
+     * @return ApiResponse&lt;V1beta1Ingress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> createNamespacedIngressWithHttpInfo(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Ingress> createNamespacedIngressWithHttpInfo(String namespace, V1beta1Ingress body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = createNamespacedIngressValidateBeforeCall(namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -317,7 +319,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedIngressAsync(String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> callback) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedIngressAsync(String namespace, V1beta1Ingress body, String pretty, final ApiCallback<V1beta1Ingress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -339,7 +341,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = createNamespacedIngressValidateBeforeCall(namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -451,11 +453,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return V1Status
+     * @return IoK8sApimachineryPkgApisMetaV1Status
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1Status deleteCollectionNamespacedCertificate(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<V1Status> resp = deleteCollectionNamespacedCertificateWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    public IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedCertificate(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> resp = deleteCollectionNamespacedCertificateWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -472,12 +474,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;V1Status&gt;
+     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1Status&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1Status> deleteCollectionNamespacedCertificateWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> deleteCollectionNamespacedCertificateWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = deleteCollectionNamespacedCertificateValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -498,7 +500,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteCollectionNamespacedCertificateAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1Status> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteCollectionNamespacedCertificateAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<IoK8sApimachineryPkgApisMetaV1Status> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -520,7 +522,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = deleteCollectionNamespacedCertificateValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -632,11 +634,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return V1Status
+     * @return IoK8sApimachineryPkgApisMetaV1Status
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1Status deleteCollectionNamespacedIngress(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<V1Status> resp = deleteCollectionNamespacedIngressWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    public IoK8sApimachineryPkgApisMetaV1Status deleteCollectionNamespacedIngress(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> resp = deleteCollectionNamespacedIngressWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -653,12 +655,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;V1Status&gt;
+     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1Status&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1Status> deleteCollectionNamespacedIngressWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> deleteCollectionNamespacedIngressWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = deleteCollectionNamespacedIngressValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -679,7 +681,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteCollectionNamespacedIngressAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1Status> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteCollectionNamespacedIngressAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<IoK8sApimachineryPkgApisMetaV1Status> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -701,7 +703,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = deleteCollectionNamespacedIngressValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -719,7 +721,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteNamespacedCertificateCall(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteNamespacedCertificateCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -771,7 +773,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteNamespacedCertificateValidateBeforeCall(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteNamespacedCertificateValidateBeforeCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -808,11 +810,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. (optional)
      * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. (optional)
      * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. (optional)
-     * @return V1Status
+     * @return IoK8sApimachineryPkgApisMetaV1Status
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1Status deleteNamespacedCertificate(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
-        ApiResponse<V1Status> resp = deleteNamespacedCertificateWithHttpInfo(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    public IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedCertificate(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
+        ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> resp = deleteNamespacedCertificateWithHttpInfo(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
         return resp.getData();
     }
 
@@ -826,12 +828,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. (optional)
      * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. (optional)
      * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. (optional)
-     * @return ApiResponse&lt;V1Status&gt;
+     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1Status&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1Status> deleteNamespacedCertificateWithHttpInfo(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
+    public ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> deleteNamespacedCertificateWithHttpInfo(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
         com.squareup.okhttp.Call call = deleteNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy, null, null);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -849,7 +851,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteNamespacedCertificateAsync(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ApiCallback<V1Status> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteNamespacedCertificateAsync(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ApiCallback<IoK8sApimachineryPkgApisMetaV1Status> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -871,7 +873,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = deleteNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -889,7 +891,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteNamespacedIngressCall(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteNamespacedIngressCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -941,7 +943,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteNamespacedIngressValidateBeforeCall(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteNamespacedIngressValidateBeforeCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -978,11 +980,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. (optional)
      * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. (optional)
      * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. (optional)
-     * @return V1Status
+     * @return IoK8sApimachineryPkgApisMetaV1Status
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1Status deleteNamespacedIngress(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
-        ApiResponse<V1Status> resp = deleteNamespacedIngressWithHttpInfo(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
+    public IoK8sApimachineryPkgApisMetaV1Status deleteNamespacedIngress(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
+        ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> resp = deleteNamespacedIngressWithHttpInfo(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy);
         return resp.getData();
     }
 
@@ -996,12 +998,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param gracePeriodSeconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. (optional)
      * @param orphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. (optional)
      * @param propagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. (optional)
-     * @return ApiResponse&lt;V1Status&gt;
+     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1Status&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1Status> deleteNamespacedIngressWithHttpInfo(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
+    public ApiResponse<IoK8sApimachineryPkgApisMetaV1Status> deleteNamespacedIngressWithHttpInfo(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy) throws ApiException {
         com.squareup.okhttp.Call call = deleteNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy, null, null);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1019,7 +1021,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteNamespacedIngressAsync(String name, String namespace, V1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ApiCallback<V1Status> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteNamespacedIngressAsync(String name, String namespace, IoK8sApimachineryPkgApisMetaV1DeleteOptions body, String pretty, Integer gracePeriodSeconds, Boolean orphanDependents, String propagationPolicy, final ApiCallback<IoK8sApimachineryPkgApisMetaV1Status> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1041,7 +1043,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = deleteNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, gracePeriodSeconds, orphanDependents, propagationPolicy, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<V1Status>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1Status>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1109,23 +1111,23 @@ public class VoyagerAppscodeComV1beta1Api {
     /**
      * 
      * get available resources
-     * @return V1APIResourceList
+     * @return IoK8sApimachineryPkgApisMetaV1APIResourceList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1APIResourceList getAPIResources() throws ApiException {
-        ApiResponse<V1APIResourceList> resp = getAPIResourcesWithHttpInfo();
+    public IoK8sApimachineryPkgApisMetaV1APIResourceList getAPIResources() throws ApiException {
+        ApiResponse<IoK8sApimachineryPkgApisMetaV1APIResourceList> resp = getAPIResourcesWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * get available resources
-     * @return ApiResponse&lt;V1APIResourceList&gt;
+     * @return ApiResponse&lt;IoK8sApimachineryPkgApisMetaV1APIResourceList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1APIResourceList> getAPIResourcesWithHttpInfo() throws ApiException {
+    public ApiResponse<IoK8sApimachineryPkgApisMetaV1APIResourceList> getAPIResourcesWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getAPIResourcesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<V1APIResourceList>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIResourceList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1136,7 +1138,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAPIResourcesAsync(final ApiCallback<V1APIResourceList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAPIResourcesAsync(final ApiCallback<IoK8sApimachineryPkgApisMetaV1APIResourceList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1158,7 +1160,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = getAPIResourcesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<V1APIResourceList>(){}.getType();
+        Type localVarReturnType = new TypeToken<IoK8sApimachineryPkgApisMetaV1APIResourceList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1262,11 +1264,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList
+     * @return V1beta1CertificateList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList listCertificateForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> resp = listCertificateForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    public V1beta1CertificateList listCertificateForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1beta1CertificateList> resp = listCertificateForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -1282,12 +1284,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList&gt;
+     * @return ApiResponse&lt;V1beta1CertificateList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> listCertificateForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1beta1CertificateList> listCertificateForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listCertificateForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1CertificateList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1307,7 +1309,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCertificateForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listCertificateForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1beta1CertificateList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1329,7 +1331,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = listCertificateForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1CertificateList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1433,11 +1435,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList
+     * @return V1beta1IngressList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList listIngressForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> resp = listIngressForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    public V1beta1IngressList listIngressForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1beta1IngressList> resp = listIngressForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -1453,12 +1455,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList&gt;
+     * @return ApiResponse&lt;V1beta1IngressList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> listIngressForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1beta1IngressList> listIngressForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listIngressForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1IngressList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1478,7 +1480,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listIngressForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listIngressForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1beta1IngressList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1500,7 +1502,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = listIngressForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1IngressList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1612,11 +1614,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList
+     * @return V1beta1CertificateList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList listNamespacedCertificate(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> resp = listNamespacedCertificateWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    public V1beta1CertificateList listNamespacedCertificate(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1beta1CertificateList> resp = listNamespacedCertificateWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -1633,12 +1635,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList&gt;
+     * @return ApiResponse&lt;V1beta1CertificateList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> listNamespacedCertificateWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1beta1CertificateList> listNamespacedCertificateWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listNamespacedCertificateValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1CertificateList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1659,7 +1661,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listNamespacedCertificateAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listNamespacedCertificateAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1beta1CertificateList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1681,7 +1683,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = listNamespacedCertificateValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1CertificateList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1CertificateList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1793,11 +1795,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList
+     * @return V1beta1IngressList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList listNamespacedIngress(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> resp = listNamespacedIngressWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    public V1beta1IngressList listNamespacedIngress(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1beta1IngressList> resp = listNamespacedIngressWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -1814,12 +1816,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList&gt;
+     * @return ApiResponse&lt;V1beta1IngressList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> listNamespacedIngressWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1beta1IngressList> listNamespacedIngressWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listNamespacedIngressValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1IngressList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1840,7 +1842,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listNamespacedIngressAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listNamespacedIngressAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1beta1IngressList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1862,7 +1864,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = listNamespacedIngressValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1IngressList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1IngressList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1877,7 +1879,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call patchNamespacedCertificateCall(String name, String namespace, Object body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call patchNamespacedCertificateCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -1923,7 +1925,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call patchNamespacedCertificateValidateBeforeCall(String name, String namespace, Object body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call patchNamespacedCertificateValidateBeforeCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1957,11 +1959,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate
+     * @return V1beta1Certificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate patchNamespacedCertificate(String name, String namespace, Object body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> resp = patchNamespacedCertificateWithHttpInfo(name, namespace, body, pretty);
+    public V1beta1Certificate patchNamespacedCertificate(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Certificate> resp = patchNamespacedCertificateWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -1972,12 +1974,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate&gt;
+     * @return ApiResponse&lt;V1beta1Certificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> patchNamespacedCertificateWithHttpInfo(String name, String namespace, Object body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Certificate> patchNamespacedCertificateWithHttpInfo(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = patchNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1992,7 +1994,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call patchNamespacedCertificateAsync(String name, String namespace, Object body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> callback) throws ApiException {
+    public com.squareup.okhttp.Call patchNamespacedCertificateAsync(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ApiCallback<V1beta1Certificate> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2014,7 +2016,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = patchNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2029,7 +2031,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call patchNamespacedIngressCall(String name, String namespace, Object body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call patchNamespacedIngressCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -2075,7 +2077,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call patchNamespacedIngressValidateBeforeCall(String name, String namespace, Object body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call patchNamespacedIngressValidateBeforeCall(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2109,11 +2111,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress
+     * @return V1beta1Ingress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress patchNamespacedIngress(String name, String namespace, Object body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> resp = patchNamespacedIngressWithHttpInfo(name, namespace, body, pretty);
+    public V1beta1Ingress patchNamespacedIngress(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Ingress> resp = patchNamespacedIngressWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -2124,12 +2126,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress&gt;
+     * @return ApiResponse&lt;V1beta1Ingress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> patchNamespacedIngressWithHttpInfo(String name, String namespace, Object body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Ingress> patchNamespacedIngressWithHttpInfo(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = patchNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2144,7 +2146,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call patchNamespacedIngressAsync(String name, String namespace, Object body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> callback) throws ApiException {
+    public com.squareup.okhttp.Call patchNamespacedIngressAsync(String name, String namespace, IoK8sApimachineryPkgApisMetaV1Patch body, String pretty, final ApiCallback<V1beta1Ingress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2166,7 +2168,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = patchNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2254,11 +2256,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param name name of the Certificate (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate
+     * @return V1beta1Certificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate readNamespacedCertificate(String name, String namespace, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> resp = readNamespacedCertificateWithHttpInfo(name, namespace, pretty);
+    public V1beta1Certificate readNamespacedCertificate(String name, String namespace, String pretty) throws ApiException {
+        ApiResponse<V1beta1Certificate> resp = readNamespacedCertificateWithHttpInfo(name, namespace, pretty);
         return resp.getData();
     }
 
@@ -2268,12 +2270,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param name name of the Certificate (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate&gt;
+     * @return ApiResponse&lt;V1beta1Certificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> readNamespacedCertificateWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Certificate> readNamespacedCertificateWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = readNamespacedCertificateValidateBeforeCall(name, namespace, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2287,7 +2289,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readNamespacedCertificateAsync(String name, String namespace, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> callback) throws ApiException {
+    public com.squareup.okhttp.Call readNamespacedCertificateAsync(String name, String namespace, String pretty, final ApiCallback<V1beta1Certificate> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2309,7 +2311,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = readNamespacedCertificateValidateBeforeCall(name, namespace, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2397,11 +2399,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param name name of the Ingress (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress
+     * @return V1beta1Ingress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress readNamespacedIngress(String name, String namespace, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> resp = readNamespacedIngressWithHttpInfo(name, namespace, pretty);
+    public V1beta1Ingress readNamespacedIngress(String name, String namespace, String pretty) throws ApiException {
+        ApiResponse<V1beta1Ingress> resp = readNamespacedIngressWithHttpInfo(name, namespace, pretty);
         return resp.getData();
     }
 
@@ -2411,12 +2413,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param name name of the Ingress (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress&gt;
+     * @return ApiResponse&lt;V1beta1Ingress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> readNamespacedIngressWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Ingress> readNamespacedIngressWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = readNamespacedIngressValidateBeforeCall(name, namespace, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2430,7 +2432,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readNamespacedIngressAsync(String name, String namespace, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> callback) throws ApiException {
+    public com.squareup.okhttp.Call readNamespacedIngressAsync(String name, String namespace, String pretty, final ApiCallback<V1beta1Ingress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2452,7 +2454,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = readNamespacedIngressValidateBeforeCall(name, namespace, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2467,7 +2469,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedCertificateCall(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedCertificateCall(String name, String namespace, V1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -2513,7 +2515,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call replaceNamespacedCertificateValidateBeforeCall(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call replaceNamespacedCertificateValidateBeforeCall(String name, String namespace, V1beta1Certificate body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2547,11 +2549,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate
+     * @return V1beta1Certificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate replaceNamespacedCertificate(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> resp = replaceNamespacedCertificateWithHttpInfo(name, namespace, body, pretty);
+    public V1beta1Certificate replaceNamespacedCertificate(String name, String namespace, V1beta1Certificate body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Certificate> resp = replaceNamespacedCertificateWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -2562,12 +2564,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate&gt;
+     * @return ApiResponse&lt;V1beta1Certificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> replaceNamespacedCertificateWithHttpInfo(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Certificate> replaceNamespacedCertificateWithHttpInfo(String name, String namespace, V1beta1Certificate body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = replaceNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2582,7 +2584,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedCertificateAsync(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate> callback) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedCertificateAsync(String name, String namespace, V1beta1Certificate body, String pretty, final ApiCallback<V1beta1Certificate> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2604,7 +2606,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = replaceNamespacedCertificateValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Certificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Certificate>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2619,7 +2621,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedIngressCall(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedIngressCall(String name, String namespace, V1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -2665,7 +2667,7 @@ public class VoyagerAppscodeComV1beta1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call replaceNamespacedIngressValidateBeforeCall(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call replaceNamespacedIngressValidateBeforeCall(String name, String namespace, V1beta1Ingress body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -2699,11 +2701,11 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress
+     * @return V1beta1Ingress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress replaceNamespacedIngress(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty) throws ApiException {
-        ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> resp = replaceNamespacedIngressWithHttpInfo(name, namespace, body, pretty);
+    public V1beta1Ingress replaceNamespacedIngress(String name, String namespace, V1beta1Ingress body, String pretty) throws ApiException {
+        ApiResponse<V1beta1Ingress> resp = replaceNamespacedIngressWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -2714,12 +2716,12 @@ public class VoyagerAppscodeComV1beta1Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress&gt;
+     * @return ApiResponse&lt;V1beta1Ingress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> replaceNamespacedIngressWithHttpInfo(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty) throws ApiException {
+    public ApiResponse<V1beta1Ingress> replaceNamespacedIngressWithHttpInfo(String name, String namespace, V1beta1Ingress body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = replaceNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2734,7 +2736,7 @@ public class VoyagerAppscodeComV1beta1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedIngressAsync(String name, String namespace, ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress body, String pretty, final ApiCallback<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress> callback) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedIngressAsync(String name, String namespace, V1beta1Ingress body, String pretty, final ApiCallback<V1beta1Ingress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2756,7 +2758,7 @@ public class VoyagerAppscodeComV1beta1Api {
         }
 
         com.squareup.okhttp.Call call = replaceNamespacedIngressValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubAppscodeVoyagerApisVoyagerV1beta1Ingress>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1beta1Ingress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
