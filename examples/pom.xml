@@ -15,17 +15,17 @@
 		<dependency>
 			<groupId>io.kubernetes</groupId>
 			<artifactId>client-java-api</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.kubernetes</groupId>
 			<artifactId>client-java</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.kubernetes</groupId>
 			<artifactId>client-java-proto</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -62,7 +62,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>io.kubernetes.client.examples.Example</mainClass>
+									<mainClass>com.appscode.voyager.client.examples.Example</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
