@@ -2,23 +2,22 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>client-java-parent</artifactId>
   <groupId>io.kubernetes</groupId>
-  <version>2.0.0-beta2-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Kubernetes Client API</name>
-  <url>https://github.com/kubernetes-client/java</url>
-  <description>Kubernetes Client Library</description>
+  <name>Voyager Client API</name>
+  <url>https://github.com/voyager-client/java</url>
+  <description>Voyager Client Library</description>
 
   <modules>
     <module>util</module>
     <module>examples</module>
     <module>kubernetes</module>
-    <module>proto</module>
   </modules>
 
   <scm>
-    <connection>scm:git:git@github.com:kubernetes-client/java.git</connection>
-    <developerConnection>scm:git:git@github.com:kubernetes-client/java.git</developerConnection>
-    <url>https://github.com/kubernetes-client/java</url>
+    <connection>scm:git:git@github.com:voyager-client/java.git</connection>
+    <developerConnection>scm:git:git@github.com:voyager-client/java.git</developerConnection>
+    <url>https://github.com/voyager-client/java</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -36,10 +35,10 @@
 
   <developers>
     <developer>
-      <name>The Kubernetes Authors</name>
-      <email>kubernetes-dev@googlegroups.com</email>
-      <organization>Kubernetes</organization>
-      <organizationUrl>https://kubernetes.io</organizationUrl>
+      <name>The Voyager Authors</name>
+      <email>hello@appscode.com</email>
+      <organization>Appscode</organization>
+      <organizationUrl>https://appscode.com</organizationUrl>
     </developer>
   </developers>
 
