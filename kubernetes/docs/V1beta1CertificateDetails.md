@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **accountRef** | **String** |  |  [optional]
 **certStableURL** | **String** |  | 
 **certURL** | **String** |  | 
-**notAfter** | [**V1Time**](V1Time.md) |  |  [optional]
-**notBefore** | [**V1Time**](V1Time.md) |  |  [optional]
+**notAfter** | [**DateTime**](DateTime.md) |  |  [optional]
+**notBefore** | [**DateTime**](DateTime.md) |  |  [optional]
 **serialNumber** | **String** |  |  [optional]
 
 

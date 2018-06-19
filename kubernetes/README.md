@@ -137,6 +137,7 @@ Class | Method | HTTP request | Description
  - [V1beta1IngressStatus](docs/V1beta1IngressStatus.md)
  - [V1beta1IngressTLS](docs/V1beta1IngressTLS.md)
  - [V1beta1LocalTypedReference](docs/V1beta1LocalTypedReference.md)
+ - [V1beta1OAuth](docs/V1beta1OAuth.md)
  - [V1beta1TCPIngressRuleValue](docs/V1beta1TCPIngressRuleValue.md)
  - [V1beta1TLSAuth](docs/V1beta1TLSAuth.md)
  - [V1beta1VaultStore](docs/V1beta1VaultStore.md)

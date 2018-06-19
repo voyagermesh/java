@@ -98,7 +98,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okhttp:logging-interceptor:2.7.5'
     compile 'com.google.code.gson:gson:2.8.1'
-    compile 'io.kubernetes:client-java:1.0.0-beta3'
+    compile 'io.kubernetes:client-java:1.0.0'
     compile 'joda-time:joda-time:2.9.9'
     testCompile 'junit:junit:4.12'
 }

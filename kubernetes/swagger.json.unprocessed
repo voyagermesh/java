@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "voyager-server",
+    "title": "Voyager",
     "contact": {
       "name": "AppsCode Inc.",
       "url": "https://appscode.com",
@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "v0"
+    "version": "v7.1.1"
   },
   "paths": {
     "/apis/": {
@@ -192,7 +192,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -293,7 +293,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -372,7 +372,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -516,7 +516,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -841,7 +841,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -985,7 +985,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -1332,7 +1332,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1433,7 +1433,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1542,7 +1542,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1659,7 +1659,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1768,7 +1768,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1885,7 +1885,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1925,6 +1925,12 @@
       "properties": {
         "basic": {
           "$ref": "#/definitions/com.github.appscode.voyager.apis.voyager.v1beta1.BasicAuth"
+        },
+        "oauth": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/com.github.appscode.voyager.apis.voyager.v1beta1.OAuth"
+          }
         },
         "tls": {
           "$ref": "#/definitions/com.github.appscode.voyager.apis.voyager.v1beta1.TLSAuth"
@@ -2248,6 +2254,13 @@
           "description": "The network address to listen HTTP(s) connections on.",
           "type": "string"
         },
+        "alpn": {
+          "description": "Application-Layer Protocol Negotiation (ALPN) is a Transport Layer Security (TLS) extension for application layer protocol negotiation. ALPN allows the application layer to negotiate which protocol should be performed over a secure connection in a manner which avoids additional round trips and which is independent of the application layer protocols. It is used by HTTP/2. If provided a list of alpn will be added to port as alpn option1,option2,... If SecretName is Provided this secret will be used to terminate SSL with alpn options. If Secret name is not provided backend server is responsible for handling SSL.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "noTLS": {
           "description": "Set noTLS = true to force plain text. Else, auto detect like present",
           "type": "boolean"
@@ -2500,6 +2513,28 @@
         },
         "name": {
           "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+          "type": "string"
+        }
+      }
+    },
+    "com.github.appscode.voyager.apis.voyager.v1beta1.OAuth": {
+      "properties": {
+        "authBackend": {
+          "type": "string"
+        },
+        "authPath": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "signinPath": {
           "type": "string"
         }
       }

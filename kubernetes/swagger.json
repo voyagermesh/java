@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "voyager-server",
+    "title": "Voyager",
     "contact": {
       "name": "AppsCode Inc.",
       "url": "https://appscode.com",
@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "v0"
+    "version": "v7.1.1"
   },
   "paths": {
     "/apis/": {
@@ -192,7 +192,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -293,7 +293,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -372,7 +372,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -516,7 +516,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -730,7 +730,8 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1.Patch"
+              "description": "Patch is provided to give a concrete name and type to the Kubernetes PATCH request body.",
+              "type": "object"
             }
           }
         ],
@@ -841,7 +842,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -985,7 +986,7 @@
           {
             "uniqueItems": true,
             "type": "integer",
-            "description": "Timeout for the list/watch call.",
+            "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
             "name": "timeoutSeconds",
             "in": "query"
           },
@@ -1199,7 +1200,8 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1.Patch"
+              "description": "Patch is provided to give a concrete name and type to the Kubernetes PATCH request body.",
+              "type": "object"
             }
           }
         ],
@@ -1298,7 +1300,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1365,7 +1367,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1440,7 +1442,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1523,7 +1525,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1598,7 +1600,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1681,7 +1683,7 @@
         {
           "uniqueItems": true,
           "type": "integer",
-          "description": "Timeout for the list/watch call.",
+          "description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
           "name": "timeoutSeconds",
           "in": "query"
         },
@@ -1700,6 +1702,12 @@
       "properties": {
         "basic": {
           "$ref": "#/definitions/v1beta1.BasicAuth"
+        },
+        "oauth": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1beta1.OAuth"
+          }
         },
         "tls": {
           "$ref": "#/definitions/v1beta1.TLSAuth"
@@ -1737,20 +1745,47 @@
         }
       }
     },
-    "v1beta1.LocalTypedReference": {
-      "description": "LocalTypedReference contains enough information to let you inspect or modify the referred object.",
+    "v1beta1.HTTPIngressBackend": {
       "properties": {
-        "apiVersion": {
-          "description": "API version of the referent.",
-          "type": "string"
+        "backendRules": {
+          "description": "Serialized HAProxy rules to apply on server backend including request, response or header rewrite. acls also can be used. https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#1",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "kind": {
-          "description": "Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
-          "type": "string"
+        "headerRules": {
+          "description": "Header rules to modifies the header.\n\nDeprecated: Use backendRule, will be removed.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hostNames": {
+          "description": "Host names to forward traffic to. If empty traffic will be forwarded to all subsets instance. If set only matched hosts will get the traffic. This is an handy way to send traffic to Specific StatefulSet pod. IE. Setting [web-0] will send traffic to only web-0 host for this StatefulSet, https://kubernetes.io/docs/tasks/stateful-application/basic-stateful-set/#creating-a-statefulset",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "name": {
-          "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
+          "description": "User can specify backend name for using it with custom acl Otherwise it will be generated",
           "type": "string"
+        },
+        "rewriteRules": {
+          "description": "Path rewrite rules with haproxy formatted regex.\n\nDeprecated: Use backendRule, will be removed.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "serviceName": {
+          "description": "Specifies the name of the referenced service.",
+          "type": "string"
+        },
+        "servicePort": {
+          "description": "Specifies the port of the referenced service.",
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -1769,34 +1804,13 @@
         }
       }
     },
-    "v1beta1.IngressBackend": {
-      "description": "IngressBackend describes all endpoints for a given service and port.",
+    "v1beta1.ChallengeProvider": {
       "properties": {
-        "backendRules": {
-          "description": "Serialized HAProxy rules to apply on server backend including request, response or header rewrite. acls also can be used. https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#1",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "dns": {
+          "$ref": "#/definitions/v1beta1.DNSChallengeProvider"
         },
-        "hostNames": {
-          "description": "Host names to forward traffic to. If empty traffic will be forwarded to all subsets instance. If set only matched hosts will get the traffic. This is an handy way to send traffic to Specific StatefulSet pod. IE. Setting [web-0] will send traffic to only web-0 host for this StatefulSet, https://kubernetes.io/docs/tasks/stateful-application/basic-stateful-set/#creating-a-statefulset",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "name": {
-          "description": "User can specify backend name for using it with custom acl Otherwise it will be generated",
-          "type": "string"
-        },
-        "serviceName": {
-          "description": "Specifies the name of the referenced service.",
-          "type": "string"
-        },
-        "servicePort": {
-          "description": "Specifies the port of the referenced service.",
-          "$ref": "#/definitions/intstr.IntOrString"
+        "http": {
+          "$ref": "#/definitions/v1beta1.HTTPChallengeProvider"
         }
       }
     },
@@ -1900,12 +1914,36 @@
           "type": "string"
         },
         "notAfter": {
-          "$ref": "#/definitions/v1.Time"
+          "type": "string",
+          "format": "date-time"
         },
         "notBefore": {
-          "$ref": "#/definitions/v1.Time"
+          "type": "string",
+          "format": "date-time"
         },
         "serialNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "v1beta1.OAuth": {
+      "properties": {
+        "authBackend": {
+          "type": "string"
+        },
+        "authPath": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "signinPath": {
           "type": "string"
         }
       }
@@ -1919,6 +1957,13 @@
         "address": {
           "description": "The network address to listen HTTP(s) connections on.",
           "type": "string"
+        },
+        "alpn": {
+          "description": "Application-Layer Protocol Negotiation (ALPN) is a Transport Layer Security (TLS) extension for application layer protocol negotiation. ALPN allows the application layer to negotiate which protocol should be performed over a secure connection in a manner which avoids additional round trips and which is independent of the application layer protocols. It is used by HTTP/2. If provided a list of alpn will be added to port as alpn option1,option2,... If SecretName is Provided this secret will be used to terminate SSL with alpn options. If Secret name is not provided backend server is responsible for handling SSL.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "noTLS": {
           "description": "Set noTLS = true to force plain text. Else, auto detect like present",
@@ -1995,7 +2040,8 @@
       "properties": {
         "lastUpdateTime": {
           "description": "timestamp for the last update to this condition",
-          "$ref": "#/definitions/v1.Time"
+          "type": "string",
+          "format": "date-time"
         },
         "message": {
           "description": "human readable message with details about the request state",
@@ -2032,47 +2078,20 @@
         }
       }
     },
-    "v1beta1.HTTPIngressBackend": {
+    "v1beta1.LocalTypedReference": {
+      "description": "LocalTypedReference contains enough information to let you inspect or modify the referred object.",
       "properties": {
-        "backendRules": {
-          "description": "Serialized HAProxy rules to apply on server backend including request, response or header rewrite. acls also can be used. https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#1",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "apiVersion": {
+          "description": "API version of the referent.",
+          "type": "string"
         },
-        "headerRules": {
-          "description": "Header rules to modifies the header.\n\nDeprecated: Use backendRule, will be removed.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "hostNames": {
-          "description": "Host names to forward traffic to. If empty traffic will be forwarded to all subsets instance. If set only matched hosts will get the traffic. This is an handy way to send traffic to Specific StatefulSet pod. IE. Setting [web-0] will send traffic to only web-0 host for this StatefulSet, https://kubernetes.io/docs/tasks/stateful-application/basic-stateful-set/#creating-a-statefulset",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "kind": {
+          "description": "Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
         },
         "name": {
-          "description": "User can specify backend name for using it with custom acl Otherwise it will be generated",
+          "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
           "type": "string"
-        },
-        "rewriteRules": {
-          "description": "Path rewrite rules with haproxy formatted regex.\n\nDeprecated: Use backendRule, will be removed.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "serviceName": {
-          "description": "Specifies the name of the referenced service.",
-          "type": "string"
-        },
-        "servicePort": {
-          "description": "Specifies the port of the referenced service.",
-          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -2125,7 +2144,8 @@
           }
         },
         "creationTime": {
-          "$ref": "#/definitions/v1.Time"
+          "type": "string",
+          "format": "date-time"
         },
         "details": {
           "description": "Deprecated",
@@ -2140,12 +2160,12 @@
         }
       }
     },
-    "v1beta1.VaultStore": {
+    "v1beta1.BasicAuth": {
       "properties": {
-        "name": {
+        "realm": {
           "type": "string"
         },
-        "prefix": {
+        "secretName": {
           "type": "string"
         }
       }
@@ -2159,13 +2179,34 @@
         }
       }
     },
-    "v1beta1.ChallengeProvider": {
+    "v1beta1.IngressBackend": {
+      "description": "IngressBackend describes all endpoints for a given service and port.",
       "properties": {
-        "dns": {
-          "$ref": "#/definitions/v1beta1.DNSChallengeProvider"
+        "backendRules": {
+          "description": "Serialized HAProxy rules to apply on server backend including request, response or header rewrite. acls also can be used. https://cbonte.github.io/haproxy-dconv/1.7/configuration.html#1",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "http": {
-          "$ref": "#/definitions/v1beta1.HTTPChallengeProvider"
+        "hostNames": {
+          "description": "Host names to forward traffic to. If empty traffic will be forwarded to all subsets instance. If set only matched hosts will get the traffic. This is an handy way to send traffic to Specific StatefulSet pod. IE. Setting [web-0] will send traffic to only web-0 host for this StatefulSet, https://kubernetes.io/docs/tasks/stateful-application/basic-stateful-set/#creating-a-statefulset",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "description": "User can specify backend name for using it with custom acl Otherwise it will be generated",
+          "type": "string"
+        },
+        "serviceName": {
+          "description": "Specifies the name of the referenced service.",
+          "type": "string"
+        },
+        "servicePort": {
+          "description": "Specifies the port of the referenced service.",
+          "$ref": "#/definitions/intstr.IntOrString"
         }
       }
     },
@@ -2179,12 +2220,12 @@
         }
       }
     },
-    "v1beta1.BasicAuth": {
+    "v1beta1.VaultStore": {
       "properties": {
-        "realm": {
+        "name": {
           "type": "string"
         },
-        "secretName": {
+        "prefix": {
           "type": "string"
         }
       }
@@ -2216,26 +2257,6 @@
           "kind": "CertificateList"
         }
       ]
-    },
-    "v1beta1.IngressTLS": {
-      "description": "IngressTLS describes the transport layer security associated with an Ingress.",
-      "properties": {
-        "hosts": {
-          "description": "Hosts are a list of hosts included in the TLS certificate. The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "ref": {
-          "description": "Ref to used tls termination.",
-          "$ref": "#/definitions/v1beta1.LocalTypedReference"
-        },
-        "secretName": {
-          "description": "SecretName is the name of the secret used to terminate SSL traffic on 443. Field is left optional to allow SSL routing based on SNI hostname alone. If the SNI host in a listener conflicts with the \"Host\" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing. Deprecated",
-          "type": "string"
-        }
-      }
     },
     "v1beta1.Certificate": {
       "properties": {
@@ -2307,6 +2328,45 @@
         }
       }
     },
+    "v1beta1.TLSAuth": {
+      "properties": {
+        "errorPage": {
+          "type": "string"
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "secretName": {
+          "type": "string"
+        },
+        "verifyClient": {
+          "type": "string"
+        }
+      }
+    },
+    "v1beta1.IngressTLS": {
+      "description": "IngressTLS describes the transport layer security associated with an Ingress.",
+      "properties": {
+        "hosts": {
+          "description": "Hosts are a list of hosts included in the TLS certificate. The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ref": {
+          "description": "Ref to used tls termination.",
+          "$ref": "#/definitions/v1beta1.LocalTypedReference"
+        },
+        "secretName": {
+          "description": "SecretName is the name of the secret used to terminate SSL traffic on 443. Field is left optional to allow SSL routing based on SNI hostname alone. If the SNI host in a listener conflicts with the \"Host\" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing. Deprecated",
+          "type": "string"
+        }
+      }
+    },
     "v1beta1.IngressList": {
       "description": "IngressList is a collection of Ingress.",
       "required": [
@@ -2340,25 +2400,6 @@
           "kind": "IngressList"
         }
       ]
-    },
-    "v1beta1.TLSAuth": {
-      "properties": {
-        "errorPage": {
-          "type": "string"
-        },
-        "headers": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "secretName": {
-          "type": "string"
-        },
-        "verifyClient": {
-          "type": "string"
-        }
-      }
     }
   }
 }
