@@ -22,7 +22,7 @@ import com.squareup.okhttp.ResponseBody;
 import com.squareup.okhttp.ws.WebSocket;
 import com.squareup.okhttp.ws.WebSocketCall;
 import com.squareup.okhttp.ws.WebSocketListener;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import io.kubernetes.client.ApiException;
 import io.kubernetes.client.Pair;
 import java.io.IOException;

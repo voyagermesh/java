@@ -12,13 +12,13 @@ limitations under the License.
 */
 package com.appscode.voyager.client.examples;
 
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import io.kubernetes.client.ApiException;
 import io.kubernetes.client.Configuration;
 import io.kubernetes.client.apis.CoreV1Api;
 import io.kubernetes.client.models.V1Pod;
 import io.kubernetes.client.models.V1PodList;
-import io.kubernetes.client.util.Config;
+import com.appscode.voyager.client.util.Config;
 import java.io.IOException;
 
 /**

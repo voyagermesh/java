@@ -17,7 +17,7 @@ import static com.appscode.voyager.client.util.KubeConfig.*;
 import com.appscode.voyager.client.util.credentials.AccessTokenAuthentication;
 import com.appscode.voyager.client.util.credentials.Authentication;
 import com.appscode.voyager.client.util.credentials.KubeconfigAuthentication;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;

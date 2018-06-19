@@ -1,7 +1,7 @@
 package com.appscode.voyager.client.util.credentials;
 
 import com.google.common.base.Preconditions;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 
 /** Uses a Bearer Token to configure {@link ApiClient} authentication to the Kubernetes API. */
 public class AccessTokenAuthentication implements Authentication {

@@ -17,7 +17,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.ResponseBody;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import io.kubernetes.client.ApiException;
 import io.kubernetes.client.JSON;
 import io.kubernetes.client.models.V1Status;

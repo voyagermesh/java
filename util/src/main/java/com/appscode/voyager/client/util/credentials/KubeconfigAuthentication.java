@@ -1,6 +1,6 @@
 package com.appscode.voyager.client.util.credentials;
 
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import com.appscode.voyager.client.util.KubeConfig;
 import java.io.IOException;
 
