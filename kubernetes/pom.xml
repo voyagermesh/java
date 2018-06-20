@@ -1,38 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.appscode.voyager</groupId>
-  <artifactId>client-java</artifactId>
+  <artifactId>client-java-api</artifactId>
   <packaging>jar</packaging>
-  <name>client-java</name>
+  <name>client-java-api</name>
   <version>1.0-SNAPSHOT</version>
-  <url>https://github.com/swagger-api/swagger-codegen</url>
+  <url>https://github.com/voyager-client/java</url>
   <description>Swagger Java</description>
-  <scm>
-    <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-    <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
-  </scm>
   <prerequisites>
     <maven>2.2.0</maven>
   </prerequisites>
 
-  <licenses>
-    <license>
-      <name>Unlicense</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>Swagger</name>
-      <email>apiteam@swagger.io</email>
-      <organization>Swagger</organization>
-      <organizationUrl>http://swagger.io</organizationUrl>
-    </developer>
-  </developers>
+  <parent>
+    <groupId>com.appscode.voyager</groupId>
+    <artifactId>client-java-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
   <build>
     <plugins>
@@ -144,30 +127,6 @@
     </plugins>
   </build>
 
-  <profiles>
-    <profile>
-      <id>sign-artifacts</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
@@ -200,7 +159,23 @@
       <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
     <!-- test dependencies -->
+    <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-junit</artifactId>
+        <version>2.0.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

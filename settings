@@ -29,6 +29,3 @@ export USERNAME="appscode"
 
 # Name of the Github repository
 export REPOSITORY="voyager"
-
-export SWAGGER_CODEGEN_USER_ORG=appscodelabs
-export SWAGGER_CODEGEN_COMMIT=kubernetes-client-java-1.0.0
