@@ -34,7 +34,7 @@ Add this dependency to your project's POM:
 ### Gradle users
 
 ```groovy
-compile 'io.kubernetes:client-java:1.0.0'
+compile 'com.appscode.voyager:client-java:1.0-SNAPSHOT'
 ```
 
 ### Others
