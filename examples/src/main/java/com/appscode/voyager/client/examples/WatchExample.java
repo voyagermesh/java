@@ -1,6 +1,5 @@
 package com.appscode.voyager.client.examples;
 
-import com.google.gson.reflect.TypeToken;
 import com.appscode.voyager.client.ApiClient;
 import com.appscode.voyager.client.ApiException;
 import com.appscode.voyager.client.Configuration;
@@ -8,6 +7,7 @@ import com.appscode.voyager.client.apis.VoyagerAppscodeComV1beta1Api;
 import com.appscode.voyager.client.models.V1beta1Ingress;
 import com.appscode.voyager.client.util.Config;
 import com.appscode.voyager.client.util.Watch;
+import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
