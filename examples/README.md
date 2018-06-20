@@ -8,6 +8,6 @@ mvn install
 
 cd ${REPO_ROOT}/examples
 mvn package
-mvn exec:java -Dexec.mainClass="io.kubernetes.client.examples.Example"
+mvn exec:java -Dexec.mainClass="com.appscode.voyager.client.examples.Example"
 ```
 
