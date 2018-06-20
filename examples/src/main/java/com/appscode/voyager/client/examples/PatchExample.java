@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * For generating Json Patches, refer <a href="http://jsonpatch.com/">http://jsonpatch.com</a>.
  *
  * <ul>
- *   <li>Creates ingress hello-node with <b>terminationGracePeriodSeconds</b> value as 30.
- *   <li>Patches ingress hello-node with <b>terminationGracePeriodSeconds</b> value as 27.
+ *   <li>Creates ingress test-ingress with <b>terminationGracePeriodSeconds</b> value as 30.
+ *   <li>Patches ingress test-ingress with <b>terminationGracePeriodSeconds</b> value as 27.
  * </ul>
  *
  * <p>Easiest way to run this: mvn exec:java
@@ -29,9 +29,9 @@ import java.util.ArrayList;
  */
 public class PatchExample {
   static String jsonPatchStr =
-      "{\"op\":\"replace\",\"path\":\"/spec/template/spec/terminationGracePeriodSeconds\",\"value\":27}";
+      "{\"op\":\"replace\",\"path\":\"/spec/rules/0/host\",\"value\":\"www.example.com\"}";
   static String jsonDepStr =
-      "{\"kind\":\"Ingress\",\"apiVersion\":\"extensions/v1beta1\",\"metadata\":{\"name\":\"hello-node\",\"creationTimestamp\":null,\"labels\":{\"run\":\"hello-node\"}},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"run\":\"hello-node\"}},\"template\":{\"metadata\":{\"creationTimestamp\":null,\"labels\":{\"run\":\"hello-node\"}},\"spec\":{\"terminationGracePeriodSeconds\":30,\"containers\":[{\"name\":\"hello-node\",\"image\":\"hello-node:v1\",\"ports\":[{\"containerPort\":8080}],\"resources\":{}}]}},\"strategy\":{}},\"status\":{}}";
+      "{\"apiVersion\":\"voyager.appscode.com/v1beta1\",\"kind\":\"Ingress\",\"metadata\":{\"name\":\"test-ingress\",\"namespace\":\"default\",\"annotations\":{\"ingress.appscode.com/type\":\"NodePort\",\"ingress.appscode.com/use-node-port\":\"false\"}},\"spec\":{\"rules\":[{\"host\":\"web.example.com\",\"http\":{\"paths\":[{\"backend\":{\"serviceName\":\"web\",\"servicePort\":80},\"path\":\"/\"}]}}]}}";
 
   public static void main(String[] args) throws IOException, ApiException {
     PatchExample example = new PatchExample();
@@ -44,7 +44,7 @@ public class PatchExample {
 
     ArrayList<JsonObject> arr = new ArrayList<>();
     arr.add(((JsonElement) example.deserialize(jsonPatchStr, JsonElement.class)).getAsJsonObject());
-    V1beta1Ingress deploy2 = example.PatchIngress("hello-node", "default", arr, "false");
+    V1beta1Ingress deploy2 = example.PatchIngress("test-ingress", "default", arr, "false");
     System.out.println("patched ingress" + deploy2);
   }
 
