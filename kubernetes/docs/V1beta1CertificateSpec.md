@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **domains** | **List&lt;String&gt;** | Tries to obtain a single certificate using all domains passed into Domains. The first domain in domains is used for the CommonName field of the certificate, all other domains are added using the Subject Alternate Names extension. |  [optional]
 **email** | **String** | Deprecated |  [optional]
 **httpProviderIngressReference** | [**V1beta1LocalTypedReference**](V1beta1LocalTypedReference.md) | This is the ingress Reference that will be used if provider is http Deprecated |  [optional]
+**paused** | **Boolean** | Indicates that the certificate is paused. |  [optional]
 **provider** | **String** | Following fields are deprecated and will removed in future version. https://github.com/appscode/voyager/pull/506 Deprecated. DNS Provider. |  [optional]
 **providerCredentialSecretName** | **String** | ProviderCredentialSecretName is used to create the acme client, that will do needed processing in DNS. Deprecated |  [optional]
 **storage** | [**V1beta1CertificateStorage**](V1beta1CertificateStorage.md) | Storage backend to store the certificates currently, kubernetes secret and vault. |  [optional]

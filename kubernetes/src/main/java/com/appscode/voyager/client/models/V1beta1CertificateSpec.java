@@ -51,6 +51,9 @@ public class V1beta1CertificateSpec {
   @SerializedName("httpProviderIngressReference")
   private V1beta1LocalTypedReference httpProviderIngressReference = null;
 
+  @SerializedName("paused")
+  private Boolean paused = null;
+
   @SerializedName("provider")
   private String provider = null;
 
@@ -176,6 +179,24 @@ public class V1beta1CertificateSpec {
     this.httpProviderIngressReference = httpProviderIngressReference;
   }
 
+  public V1beta1CertificateSpec paused(Boolean paused) {
+    this.paused = paused;
+    return this;
+  }
+
+   /**
+   * Indicates that the certificate is paused.
+   * @return paused
+  **/
+  @ApiModelProperty(value = "Indicates that the certificate is paused.")
+  public Boolean isPaused() {
+    return paused;
+  }
+
+  public void setPaused(Boolean paused) {
+    this.paused = paused;
+  }
+
   public V1beta1CertificateSpec provider(String provider) {
     this.provider = provider;
     return this;
@@ -246,6 +267,7 @@ public class V1beta1CertificateSpec {
         Objects.equals(this.domains, v1beta1CertificateSpec.domains) &&
         Objects.equals(this.email, v1beta1CertificateSpec.email) &&
         Objects.equals(this.httpProviderIngressReference, v1beta1CertificateSpec.httpProviderIngressReference) &&
+        Objects.equals(this.paused, v1beta1CertificateSpec.paused) &&
         Objects.equals(this.provider, v1beta1CertificateSpec.provider) &&
         Objects.equals(this.providerCredentialSecretName, v1beta1CertificateSpec.providerCredentialSecretName) &&
         Objects.equals(this.storage, v1beta1CertificateSpec.storage);
@@ -253,7 +275,7 @@ public class V1beta1CertificateSpec {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acmeStagingURL, acmeUserSecretName, challengeProvider, domains, email, httpProviderIngressReference, provider, providerCredentialSecretName, storage);
+    return Objects.hash(acmeStagingURL, acmeUserSecretName, challengeProvider, domains, email, httpProviderIngressReference, paused, provider, providerCredentialSecretName, storage);
   }
 
 
@@ -268,6 +290,7 @@ public class V1beta1CertificateSpec {
     sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    httpProviderIngressReference: ").append(toIndentedString(httpProviderIngressReference)).append("\n");
+    sb.append("    paused: ").append(toIndentedString(paused)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    providerCredentialSecretName: ").append(toIndentedString(providerCredentialSecretName)).append("\n");
     sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
