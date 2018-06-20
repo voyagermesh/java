@@ -19,7 +19,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.common.io.Resources;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import com.appscode.voyager.client.util.credentials.Authentication;
 import java.io.IOException;
 import java.nio.file.Files;

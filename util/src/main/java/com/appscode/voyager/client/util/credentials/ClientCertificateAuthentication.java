@@ -1,7 +1,7 @@
 package com.appscode.voyager.client.util.credentials;
 
 import com.appscode.voyager.client.ApiClient;
-import com.appscode.voyager.client.util.SSLUtils;
+import io.kubernetes.client.util.SSLUtils;
 import java.io.IOException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;

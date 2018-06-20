@@ -1,7 +1,7 @@
 package com.appscode.voyager.client.util.credentials;
 
 import com.google.common.io.Resources;
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import org.junit.Test;

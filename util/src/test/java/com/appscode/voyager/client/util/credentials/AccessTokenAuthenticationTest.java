@@ -4,7 +4,7 @@ import static com.appscode.voyager.client.util.TestUtils.getApiKeyAuthFromClient
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import org.junit.Test;
 
 public class AccessTokenAuthenticationTest {

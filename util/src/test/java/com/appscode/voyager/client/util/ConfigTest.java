@@ -14,7 +14,7 @@ package com.appscode.voyager.client.util;
 
 import static org.junit.Assert.*;
 
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

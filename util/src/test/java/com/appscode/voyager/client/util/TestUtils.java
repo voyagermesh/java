@@ -1,6 +1,6 @@
 package com.appscode.voyager.client.util;
 
-import io.kubernetes.client.ApiClient;
+import com.appscode.voyager.client.ApiClient;
 import io.kubernetes.client.auth.ApiKeyAuth;
 
 public class TestUtils {
