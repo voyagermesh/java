@@ -18,8 +18,8 @@ import java.util.ArrayList;
  * For generating Json Patches, refer <a href="http://jsonpatch.com/">http://jsonpatch.com</a>.
  *
  * <ul>
- *   <li>Creates ingress test-ingress with <b>terminationGracePeriodSeconds</b> value as 30.
- *   <li>Patches ingress test-ingress with <b>terminationGracePeriodSeconds</b> value as 27.
+ *   <li>Creates ingress test-ingress with <b>spec.rules[0].host</b> value as web.example.com.
+ *   <li>Patches ingress test-ingress with <b>spec.rules[0].host</b> value as www.example.com.
  * </ul>
  *
  * <p>Easiest way to run this: mvn exec:java
