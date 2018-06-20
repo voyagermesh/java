@@ -15,7 +15,6 @@ package com.appscode.voyager.client.util;
 import com.appscode.voyager.client.util.authenticators.Authenticator;
 import com.appscode.voyager.client.util.authenticators.AzureActiveDirectoryAuthenticator;
 import com.appscode.voyager.client.util.authenticators.GCPAuthenticator;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

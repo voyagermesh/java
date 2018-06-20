@@ -12,10 +12,9 @@ limitations under the License.
 */
 package com.appscode.voyager.client.util;
 
+import com.appscode.voyager.client.ApiClient;
 import com.appscode.voyager.client.util.credentials.AccessTokenAuthentication;
 import com.appscode.voyager.client.util.credentials.UsernamePasswordAuthentication;
-import com.appscode.voyager.client.ApiClient;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;

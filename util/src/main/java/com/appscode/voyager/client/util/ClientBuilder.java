@@ -14,11 +14,10 @@ package com.appscode.voyager.client.util;
 
 import static com.appscode.voyager.client.util.KubeConfig.*;
 
+import com.appscode.voyager.client.ApiClient;
 import com.appscode.voyager.client.util.credentials.AccessTokenAuthentication;
 import com.appscode.voyager.client.util.credentials.Authentication;
 import com.appscode.voyager.client.util.credentials.KubeconfigAuthentication;
-import com.appscode.voyager.client.ApiClient;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -121,7 +120,8 @@ public class ClientBuilder {
 
     final String token =
         new String(
-            Files.readAllBytes(Paths.get(Config.SERVICEACCOUNT_TOKEN_PATH)), Charset.defaultCharset());
+            Files.readAllBytes(Paths.get(Config.SERVICEACCOUNT_TOKEN_PATH)),
+            Charset.defaultCharset());
     builder.setCertificateAuthority(Files.readAllBytes(Paths.get(Config.SERVICEACCOUNT_CA_PATH)));
     builder.setAuthentication(new AccessTokenAuthentication(token));
 
