@@ -4,6 +4,10 @@
 
 **Merged pull requests:**
 
+- Build source and javadoc packages in release build [\#6](https://github.com/voyager-client/java/pull/6) ([tamalsaha](https://github.com/tamalsaha))
+- Add Certificate paused support [\#4](https://github.com/voyager-client/java/pull/4) ([tamalsaha](https://github.com/tamalsaha))
+- Add license [\#3](https://github.com/voyager-client/java/pull/3) ([tamalsaha](https://github.com/tamalsaha))
+- Add README [\#2](https://github.com/voyager-client/java/pull/2) ([tamalsaha](https://github.com/tamalsaha))
 - Add examples [\#1](https://github.com/voyager-client/java/pull/1) ([tamalsaha](https://github.com/tamalsaha))
 
 
