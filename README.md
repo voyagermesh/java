@@ -26,7 +26,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.appscode.voyager</groupId>
     <artifactId>client-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -34,7 +34,7 @@ Add this dependency to your project's POM:
 ### Gradle users
 
 ```groovy
-compile 'com.appscode.voyager:client-java:1.0-SNAPSHOT'
+compile 'com.appscode.voyager:client-java:0.1.0'
 ```
 
 ### Others
@@ -131,7 +131,7 @@ All APIs and Models' documentation can be found at the [Generated client's READM
 
 |                          | Kubernetes 1.4 | Kubernetes 1.5 | Kubernetes 1.6 | Kubernetes 1.7 | Kubernetes 1.8 | Kubernetes 1.9 |
 |--------------------------|----------------|----------------|----------------|----------------|----------------|----------------|
-| java-client 1.0-SNAPSHOT | +              | +              | +              | +              | ✓              | -              |
+| java-client 0.1.0 | +              | +              | +              | +              | ✓              | -              |
 
 Key:
 
